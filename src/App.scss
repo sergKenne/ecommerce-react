@@ -182,7 +182,6 @@ body {
               display: inline-block;
               position: absolute;
               left: 30px;
-             
               top: 25px;
               height: 3px;
               width: 25px;
@@ -240,7 +239,8 @@ body {
           flex-direction: column;
           justify-content: flex-start;
           background-color: $main_bg;
-         // background: url(../image/bg-sidebar.jpg) no-repeat;
+          //background: url(../image/bg-sidebar.jpg) no-repeat;
+          background-repeat: no-repeat;
           background-size: cover;
           background-position: 50% center;
           position: fixed;
@@ -1201,10 +1201,12 @@ body {
   }
 
   &__item {
-      margin: 0 20px;
+      //margin: 0 20px;
+      padding: 0 15px;
 
       @media screen and (max-width: 769px) {
-          margin: 0 10px;
+         // margin: 0 10px;
+         padding: 0 10px;
       }
   }
 
@@ -2102,6 +2104,8 @@ left: 0;
 .rotate-icon-js {
   transform: rotate(-90deg);
 }
+
+
 
 
 .footer {

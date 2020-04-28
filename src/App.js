@@ -1,30 +1,34 @@
-import React from 'react';
-// import logo from './logo.svg';
+import React, { useEffect } from 'react';
+
 import './App.scss';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Header from './components/header/Header';
-import Showcase from './components/Showcase';
+import Home from './components/home/Home'
 import Footer from './components/footer/Footer'
-import $ from 'jquery';
-import { scriptJs } from './assets/js/script';
-scriptJs();
+import BasketModal from './components/modal/BasketModal';
+import LikeModal from './components/modal/LikeModal';
+//import $ from 'jquery';
+//import 'materialize-css';
+import 'slick-carousel';
+import { script } from './assets/js/script'
+
 
 
 function App() {
-  const h1 = $('h1');
+  useEffect( function() {
+    script();
+  }, []) ;
+
   return (
     <Router>
       <div className="wrapper">
         <Header />
           <Switch>
-            <Route exact path="/" component={Showcase}/>
+            <Route exact path="/" component={ Home }/>
           </Switch>
         <Footer />
+        <BasketModal/>
+        <LikeModal/>
       </div>
     </Router>
     

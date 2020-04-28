@@ -1,7 +1,7 @@
 import React from 'react';
-import aside1 from '../assets/image/aside-1.jpg';
-import aside2 from '../assets/image/aside-2.jpg'
-import Background from '../assets/image/slider-1.jpg'
+import aside1 from '../../assets/image/aside-1.jpg';
+import aside2 from '../../assets/image/aside-2.jpg'
+import Background from '../../assets/image/slider-1.jpg'
 
 function Showcase() {
     return (
