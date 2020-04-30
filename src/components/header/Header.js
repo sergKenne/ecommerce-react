@@ -1,12 +1,7 @@
 import React from 'react';
 import logo from '../../assets/image/logo.png';
-import sideBg from '../../assets/image/bg-sidebar.jpg';
-import $ from 'jquery'
-
 
 function Header() {
-
-    const bgSide = { backgroundImage: `url(${sideBg})`};
 
     return (
         <div className="header">
@@ -31,7 +26,7 @@ function Header() {
                 <div className="nav__btn-menu"></div>
                     <img className="nav__logo" src="image/logo.png" alt="logo" />
                     <div className="nav__list-wrap">
-                    <ul className="nav__list" style={ ($(window).width() < 1201) ? bgSide: {backgroundImage:"none"} }>
+                    <ul className="nav__list">
                         <li className="nav__list-item">
                             <a href="#" className="nav__list-link">
                                 <span className="material-icons nav__icon"> home </span>home

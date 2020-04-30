@@ -27,9 +27,6 @@ export function script() {
             }
         });
 
-       // $('select').formSelect();
-
-
         //SHOW BASKET AND LIKES
 
         $('#basket-js').click(function() {

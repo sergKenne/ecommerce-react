@@ -1,13 +1,12 @@
 import React from 'react';
 import aside1 from '../../assets/image/aside-1.jpg';
 import aside2 from '../../assets/image/aside-2.jpg'
-import Background from '../../assets/image/slider-1.jpg'
 
 function Showcase() {
     return (
         <div className="showcase">
             <div className="contain-wrap showcase__info">
-                <div className="showcase__big-sale" style ={{ background: `url(${Background})` }}>
+                <div className="showcase__big-sale">
                     <div className="showcase__description">
                         <h4 className="showcase__title">big sale</h4>
                         <h1 className="showcase__main-title">women's summer collection</h1>

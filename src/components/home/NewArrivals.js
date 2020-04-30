@@ -3,11 +3,11 @@ import M from 'materialize-css/dist/js/materialize.min.js';
 
 
 
-class Feature extends Component {
+class NewArrivals extends Component {
 
     componentDidMount() {
-        var elem = document.querySelector('.tabs');
-        var options = {}
+        var elem = document.querySelector('.tabs-2');
+        var options = {duration:50}
         var instance = M.Tabs.init(elem, options);
     }
     
@@ -15,20 +15,20 @@ class Feature extends Component {
         return (
             <div className="featured">
                 <div className="contain-wrap">
-                    <h2 className="main-title featured__title">feature products</h2>
+                    <h2 className="main-title featured__title">New Arrivals</h2>
                     <div className="featured__tabs">
-                        <ul className="tabs tabs-fixed-width">
-                            <li className="tab"><a className="active" href="#test2">accessories</a></li>
-                            <li className="tab"><a  href="#test1">gadgets</a></li>
-                            <li className="tab"><a href="#test4">men</a></li>
-                            <li className="tab"><a href="#test0">women</a></li>
+                        <ul className="tabs tabs-2 tabs-fixed-width  ">
+                            <li className="tab"><a className="active" href="#test21">accessories</a></li>
+                            <li className="tab"><a  href="#test11">gadgets</a></li>
+                            <li className="tab"><a href="#test41">men</a></li>
+                            <li className="tab"><a href="#test01">women</a></li>
                         </ul>
-                        <div id="test1" className="test">
+                        <div id="test11" className="test">
                             <div className="your-class featured__slide-tabs">
                                 <div>
                                     <div className="card">
                                         <div className="card-image">
-                                            <img src="image/gadget_1.jpg" />
+                                            <img src="image/gadget_1.jpg"/>
                                             <a className="btn-floating halfway-fab waves-effect waves-light btn-large red"><i className="material-icons">shopping_cart</i></a>
                                             <span className="material-icons card-favorite">favorite </span>
                                         </div>
@@ -50,7 +50,7 @@ class Feature extends Component {
                                 <div>
                                     <div className="card">
                                         <div className="card-image">
-                                            <img src="image/gadget_2.jpg" />
+                                            <img src="image/gadget_2.jpg"/>
                                             <a className="btn-floating halfway-fab waves-effect waves-light btn-large red"><i className="material-icons">shopping_cart</i></a>
                                             <span className="material-icons card-favorite">favorite </span>
                                         </div>
@@ -72,7 +72,7 @@ class Feature extends Component {
                                 <div>
                                     <div className="card">
                                         <div className="card-image">
-                                            <img src="image/gadget_3.jpg" />
+                                            <img src="image/gadget_3.jpg"/>
                                             <a className="btn-floating halfway-fab waves-effect waves-light btn-large red"><i className="material-icons">shopping_cart</i></a>
                                             <span className="material-icons card-favorite">favorite </span>
                                         </div>
@@ -94,7 +94,7 @@ class Feature extends Component {
                                 <div>
                                     <div className="card">
                                         <div className="card-image">
-                                            <img src="image/gadget_4.jpg" />
+                                            <img src="image/gadget_4.jpg"/>
                                             <a className="btn-floating halfway-fab waves-effect waves-light btn-large red"><i className="material-icons">shopping_cart</i></a>
                                             <span className="material-icons card-favorite">favorite </span>
                                         </div>
@@ -116,7 +116,7 @@ class Feature extends Component {
                                 <div>
                                     <div className="card">
                                         <div className="card-image">
-                                            <img src="image/gadget_5.jpg" />
+                                            <img src="image/gadget_5.jpg"/>
                                             <a className="btn-floating halfway-fab waves-effect waves-light btn-large red"><i className="material-icons">shopping_cart</i></a>
                                             <span className="material-icons card-favorite">favorite </span>
                                         </div>
@@ -137,12 +137,12 @@ class Feature extends Component {
                                 </div> 
                             </div>
                         </div>
-                        <div id="test2" className="test">
+                        <div id="test21" className="test">
                             <div className="your-class featured__slide-tabs">
                                 <div>
                                     <div className="card">
                                         <div className="card-image">
-                                            <img src="image/gadget_1.jpg" />
+                                            <img src="image/gadget_1.jpg"/>
                                             <a className="btn-floating halfway-fab waves-effect waves-light btn-large red"><i className="material-icons">shopping_cart</i></a>
                                             <span className="material-icons card-favorite">favorite </span>
                                         </div>
@@ -164,7 +164,7 @@ class Feature extends Component {
                                 <div>
                                     <div className="card">
                                         <div className="card-image">
-                                            <img src="image/gadget_2.jpg" />
+                                            <img src="image/gadget_2.jpg"/>
                                             <a className="btn-floating halfway-fab waves-effect waves-light btn-large red"><i className="material-icons">shopping_cart</i></a>
                                             <span className="material-icons card-favorite">favorite </span>
                                         </div>
@@ -186,7 +186,7 @@ class Feature extends Component {
                                 <div>
                                     <div className="card">
                                         <div className="card-image">
-                                            <img src="image/gadget_3.jpg" />
+                                            <img src="image/gadget_3.jpg"/>
                                             <a className="btn-floating halfway-fab waves-effect waves-light btn-large red"><i className="material-icons">shopping_cart</i></a>
                                             <span className="material-icons card-favorite">favorite </span>
                                         </div>
@@ -208,7 +208,7 @@ class Feature extends Component {
                                 <div>
                                     <div className="card">
                                         <div className="card-image">
-                                            <img src="image/gadget_4.jpg" />
+                                            <img src="image/gadget_4.jpg"/>
                                             <a className="btn-floating halfway-fab waves-effect waves-light btn-large red"><i className="material-icons">shopping_cart</i></a>
                                             <span className="material-icons card-favorite">favorite </span>
                                         </div>
@@ -230,7 +230,7 @@ class Feature extends Component {
                                 <div>
                                     <div className="card">
                                         <div className="card-image">
-                                            <img src="image/gadget_5.jpg" />
+                                            <img src="image/gadget_5.jpg"/>
                                             <a className="btn-floating halfway-fab waves-effect waves-light btn-large red"><i className="material-icons">shopping_cart</i></a>
                                             <span className="material-icons card-favorite">favorite </span>
                                         </div>
@@ -251,12 +251,12 @@ class Feature extends Component {
                                 </div> 
                             </div>
                         </div>
-                        <div id="test4" className="test">
+                        <div id="test41" className="test">
                             <div className="your-class featured__slide-tabs">
                                 <div>
                                     <div className="card">
                                         <div className="card-image">
-                                            <img src="image/gadget_1.jpg" />
+                                            <img src="image/gadget_1.jpg"/>
                                             <a className="btn-floating halfway-fab waves-effect waves-light btn-large red"><i className="material-icons">shopping_cart</i></a>
                                             <span className="material-icons card-favorite">favorite </span>
                                         </div>
@@ -278,7 +278,7 @@ class Feature extends Component {
                                 <div>
                                     <div className="card">
                                         <div className="card-image">
-                                            <img src="image/gadget_2.jpg" />
+                                            <img src="image/gadget_2.jpg"/>
                                             <a className="btn-floating halfway-fab waves-effect waves-light btn-large red"><i className="material-icons">shopping_cart</i></a>
                                             <span className="material-icons card-favorite">favorite </span>
                                         </div>
@@ -300,7 +300,7 @@ class Feature extends Component {
                                 <div>
                                     <div className="card">
                                         <div className="card-image">
-                                            <img src="image/gadget_3.jpg" />
+                                            <img src="image/gadget_3.jpg"/>
                                             <a className="btn-floating halfway-fab waves-effect waves-light btn-large red"><i className="material-icons">shopping_cart</i></a>
                                             <span className="material-icons card-favorite">favorite </span>
                                         </div>
@@ -322,7 +322,7 @@ class Feature extends Component {
                                 <div>
                                     <div className="card">
                                         <div className="card-image">
-                                            <img src="image/gadget_4.jpg" />
+                                            <img src="image/gadget_4.jpg"/>
                                             <a className="btn-floating halfway-fab waves-effect waves-light btn-large red"><i className="material-icons">shopping_cart</i></a>
                                             <span className="material-icons card-favorite">favorite </span>
                                         </div>
@@ -344,7 +344,7 @@ class Feature extends Component {
                                 <div>
                                     <div className="card">
                                         <div className="card-image">
-                                            <img src="image/gadget_5.jpg" />
+                                            <img src="image/gadget_5.jpg"/>
                                             <a className="btn-floating halfway-fab waves-effect waves-light btn-large red"><i className="material-icons">shopping_cart</i></a>
                                             <span className="material-icons card-favorite">favorite </span>
                                         </div>
@@ -365,12 +365,12 @@ class Feature extends Component {
                                 </div> 
                             </div>
                         </div>
-                        <div id="test0" className="test"> 
+                        <div id="test01" className="test">
                             <div className="your-class featured__slide-tabs">
                                 <div>
                                     <div className="card">
                                         <div className="card-image">
-                                            <img src="image/gadget_1.jpg" />
+                                            <img src="image/gadget_1.jpg"/>
                                             <a className="btn-floating halfway-fab waves-effect waves-light btn-large red"><i className="material-icons">shopping_cart</i></a>
                                             <span className="material-icons card-favorite">favorite </span>
                                         </div>
@@ -392,7 +392,7 @@ class Feature extends Component {
                                 <div>
                                     <div className="card">
                                         <div className="card-image">
-                                            <img src="image/gadget_2.jpg" />
+                                            <img src="image/gadget_2.jpg"/>
                                             <a className="btn-floating halfway-fab waves-effect waves-light btn-large red"><i className="material-icons">shopping_cart</i></a>
                                             <span className="material-icons card-favorite">favorite </span>
                                         </div>
@@ -414,7 +414,7 @@ class Feature extends Component {
                                 <div>
                                     <div className="card">
                                         <div className="card-image">
-                                            <img src="image/gadget_3.jpg" />
+                                            <img src="image/gadget_3.jpg"/>
                                             <a className="btn-floating halfway-fab waves-effect waves-light btn-large red"><i className="material-icons">shopping_cart</i></a>
                                             <span className="material-icons card-favorite">favorite </span>
                                         </div>
@@ -436,7 +436,7 @@ class Feature extends Component {
                                 <div>
                                     <div className="card">
                                         <div className="card-image">
-                                            <img src="image/gadget_4.jpg" />
+                                            <img src="image/gadget_4.jpg"/>
                                             <a className="btn-floating halfway-fab waves-effect waves-light btn-large red"><i className="material-icons">shopping_cart</i></a>
                                             <span className="material-icons card-favorite">favorite </span>
                                         </div>
@@ -458,7 +458,7 @@ class Feature extends Component {
                                 <div>
                                     <div className="card">
                                         <div className="card-image">
-                                            <img src="image/gadget_5.jpg" />
+                                            <img src="image/gadget_5.jpg"/>
                                             <a className="btn-floating halfway-fab waves-effect waves-light btn-large red"><i className="material-icons">shopping_cart</i></a>
                                             <span className="material-icons card-favorite">favorite </span>
                                         </div>
@@ -486,4 +486,4 @@ class Feature extends Component {
     }
 }
 
-export default Feature
+export default NewArrivals
