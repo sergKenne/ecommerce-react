@@ -21,10 +21,7 @@ import { script } from './assets/js/script'
 
 function App() {
   useEffect( function() {
-   
-   
     script();
-   
   }, []) ;
 
   return (

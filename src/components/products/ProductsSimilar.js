@@ -88,7 +88,7 @@ const ProductsSimilar = () => {
                     </div>
                 </div>
                 <ul className="tabs tabs-fixed-width  similar-product__btn">
-                    <li className="tab"><a href="#">show all</a></li>
+                    <li className="tab"><a  className="active" href="#">show all</a></li>
                 </ul>
             </div>
         </div>
