@@ -107,7 +107,48 @@ export function script() {
           
         // });
 
-        $('.your-class ').slick({
+
+
+
+        //tab own script
+
+        $(".tab1").click(function() {
+          $(".taBtn").removeClass("active");
+          $(this).addClass("active")
+          $(".tab1").addClass("active tabOpacity");
+          $(".test").removeClass("tabOpacity");
+          $(".test1").addClass("tabOpacity");
+        });
+
+        $(".tab2").click(function() {
+          $(".taBtn").removeClass("active");
+          $(this).addClass("active")
+          $(".tab2").addClass("active tabOpacity");
+          $(".test").removeClass("tabOpacity");
+          $(".test2").addClass("tabOpacity");
+        });
+
+        $(".tab3").click(function() {
+          $(".taBtn").removeClass("active");
+          $(this).addClass("active")
+          $(".tab3").addClass("active tabOpacity");
+          $(".test").removeClass("tabOpacity");
+          $(".test3").addClass("tabOpacity");
+        });
+
+        $(".tab4").click(function() {
+          $(".taBtn").removeClass("active");
+          $(this).addClass("active")
+          $(".tab4").addClass("active tabOpacity");
+          $(".test").removeClass("tabOpacity");
+          $(".test4").addClass("tabOpacity");
+        })
+
+
+
+
+
+        $('.your-class').slick({
             dots: true,
             infinite: true,
             //speed: 300,

@@ -38,7 +38,7 @@ const ProductsDescription = () => {
                         <div className="product__form-item">
                             <div className="input-field">
                                 <select>
-                                    <option value="" disabled selected>Color</option>
+                                    <option value="" disabled >Color</option>
                                     <option value="1">Option 1</option>
                                     <option value="2">Option 2</option>
                                     <option value="3">Option 3</option>
@@ -48,7 +48,7 @@ const ProductsDescription = () => {
                         <div className="product__form-item">
                             <div className="input-field">
                                 <select>
-                                    <option value="" disabled selected>Size</option>
+                                    <option value="" disabled >Size</option>
                                     <option value="1">Option 1</option>
                                     <option value="2">Option 2</option>
                                     <option value="3">Option 3</option>
@@ -58,7 +58,7 @@ const ProductsDescription = () => {
                         <div className="product__form-item">
                             <div className="input-field">
                                 <select>
-                                    <option value="" disabled selected>Quantity</option>
+                                    <option value="" disabled >Quantity</option>
                                     <option value="1">Option 1</option>
                                     <option value="2">Option 2</option>
                                     <option value="3">Option 3</option>

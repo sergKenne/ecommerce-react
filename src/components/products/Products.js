@@ -7,7 +7,7 @@ const Products = () => {
     return (
         <div className="shop">
             <Banner/>
-            <div class="product shop__product">
+            <div className="product shop__product">
                 <ProductsDescription />
                 <ProductsSimilar/>
             </div>

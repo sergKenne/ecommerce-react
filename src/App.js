@@ -10,9 +10,9 @@ import BasketModal from './components/modal/BasketModal';
 import LikeModal from './components/modal/LikeModal';
 import ErrorPage from './components/errorPage/ErrorPage'
 import Shop from './components/shop/Shop'
-import Products from './components/products/Products'
-import Cart from './components/cart/Cart'
-//import $ from 'jquery';
+import Products from './components/products/Products';
+import Cart from './components/cart/Cart';
+import $ from 'jquery';
 // import 'materialize-css';
 // import M from 'materialize-css'
 import 'slick-carousel';
@@ -22,6 +22,9 @@ import { script } from './assets/js/script'
 function App() {
   useEffect( function() {
     script();
+
+    $(".test1").addClass("tabOpacity");
+
   }, []) ;
 
   return (

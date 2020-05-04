@@ -525,11 +525,13 @@ body {
       top: 20rem;
       background-color: #ffffff;
       width: 100%;
+      box-shadow: 0 1px 1px 0 rgba(0,0,0,.14),0 2px 1px -1px rgba(0,0,0,.12),0 1px 3px 0 rgba(0,0,0,.2);
 
       @media screen and (max-width: 1200px) {
           position: initial;
           background-color: transparent;
           margin-left: 1.8rem;
+          box-shadow: none;
 
        }
   }
@@ -823,41 +825,108 @@ body {
 }
 
 .tabs.tabs-fixed-width .tab {
-  flex:0;
-  margin: 0 8px;
-
-  @media screen and (max-width: 376px) {
-      margin-bottom: 1rem;
-   }
-}
-
-.tabs .tab a {
-  color: rgba(0, 0, 0, 0.87);
-  font-size: 0.875rem;
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
-  font-weight: 700;
-  line-height: 1.75;
-  line-height: 48px;
-  letter-spacing: 0.02857em;
-  text-transform: uppercase;
-
-}
-
-.tabs .tab a:hover,.tabs .tab a:active:hover {
-  background-color: rgba(0, 0, 0, 0.04);
-  color: rgba(0, 0, 0, 0.87);
-}
-
-.tabs .tab a:focus, .tabs .tab a:focus.active:hover, .tabs .tab a.active:hover {
-  box-shadow: 0px 5px 5px -3px rgba(0,0,0,0.2), 0px 8px 10px 1px rgba(0,0,0,0.14), 0px 3px 14px 2px rgba(0,0,0,0.12);
-}
-
-.tabs .tab a:focus, .tabs .tab a:focus.active, .tabs .tab a.active {
+    flex:0;
+    margin: 0 8px;
+  
+    @media screen and (max-width: 376px) {
+        margin-bottom: 1rem;
+     }
+  }
+  
+  .tabs .tab span {
+    color: rgba(0, 0, 0, 0.87);
+    font-size: 0.875rem;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 700;
+    line-height: 1.75;
+    line-height: 48px;
+    letter-spacing: 0.02857em;
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 0 15px;
+    cursor: pointer;
+  
+  }
+  
+  .tabs .tab span:hover,.tabs .tab span:active:hover {
+    background-color: rgba(0, 0, 0, 0.04);
+    color: rgba(0, 0, 0, 0.87);
+  }
+  
+  .tabs .tab span:focus, .tabs .tab span:focus.active:hover, .tabs .tab span.active:hover {
+    box-shadow: 0px 5px 5px -3px rgba(0,0,0,0.2), 0px 8px 10px 1px rgba(0,0,0,0.14), 0px 3px 14px 2px rgba(0,0,0,0.12);
+  }
+  
+  .tabs .tab span:focus, .tabs .tab span:focus.active, .tabs .tab span.active {
   color: rgba(0, 0, 0, 0.87);
   box-shadow: 0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12);
   background-color: #f7f7f7;
   border-radius: 4px;
 }
+
+
+.featured__tabs {
+    //border: 2px solid $btn_color;
+    position: relative;
+    min-height: 706px;
+}
+
+
+.test {
+    
+    position: absolute;
+    width: 100%;
+    top: 102px;
+    //display: none;
+    opacity: 0;
+}
+
+
+.tabOpacity {
+  
+    //display: block;
+    opacity: 1;
+    z-index: 2;
+}
+  
+
+
+// .tabs.tabs-fixed-width .tab {
+//   flex:0;
+//   margin: 0 8px;
+
+//   @media screen and (max-width: 376px) {
+//       margin-bottom: 1rem;
+//    }
+// }
+
+// .tabs .tab a {
+//   color: rgba(0, 0, 0, 0.87);
+//   font-size: 0.875rem;
+//   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+//   font-weight: 700;
+//   line-height: 1.75;
+//   line-height: 48px;
+//   letter-spacing: 0.02857em;
+//   text-transform: uppercase;
+
+// }
+
+// .tabs .tab a:hover,.tabs .tab a:active:hover {
+//   background-color: rgba(0, 0, 0, 0.04);
+//   color: rgba(0, 0, 0, 0.87);
+// }
+
+// .tabs .tab a:focus, .tabs .tab a:focus.active:hover, .tabs .tab a.active:hover {
+//   box-shadow: 0px 5px 5px -3px rgba(0,0,0,0.2), 0px 8px 10px 1px rgba(0,0,0,0.14), 0px 3px 14px 2px rgba(0,0,0,0.12);
+// }
+
+// .tabs .tab a:focus, .tabs .tab a:focus.active, .tabs .tab a.active {
+//   color: rgba(0, 0, 0, 0.87);
+//   box-shadow: 0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12);
+//   background-color: #f7f7f7;
+//   border-radius: 4px;
+// }
 
 .tabs .indicator {
   background-color: transparent;
@@ -865,7 +934,6 @@ body {
 
 .test {
   min-height: 600px;
-  //border: 2px solid red;
 }
 
 
@@ -2264,9 +2332,6 @@ left: 0;
        }
   }
 }
-
-
-
 
 
 

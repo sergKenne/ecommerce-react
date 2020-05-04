@@ -7,7 +7,7 @@ export default [
     {
        "menu_title": "Home",
        "type": "subMenu",
-       "path": "#",
+       "path": "/",
        "icon": "home",
        "child_routes": null  
       // [

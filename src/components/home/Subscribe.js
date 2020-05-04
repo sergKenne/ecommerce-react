@@ -13,7 +13,7 @@ function Subscribe() {
                         <div className="input-field subscribe__input">
                             <i className="material-icons prefix">send</i>
                             <input id="icon_telephone" type="tel" className="validate" />
-                            <label htmlFor="icon_telephone" className="subscribe__label" autocomplete="off">Enter email Adress</label>
+                            <label htmlFor="icon_telephone" className="subscribe__label" autoComplete="off">Enter email Adress</label>
                         </div>
                     </form>
                 </div>

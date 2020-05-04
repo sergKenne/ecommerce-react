@@ -17,65 +17,105 @@ const Navbar = () => {
 
                                 return (
                                     <li className="nav__list-item" key={listItem.menu_title}>
-                                        <a href={ listItem.path } className="nav__list-link">
+                                        <Link to={ listItem.path } className="nav__list-link">
                                             <span className="material-icons nav__icon">{ listItem.icon }</span> { listItem.menu_title } 
                                             { listItem.child_routes === null ? "" : <span className="material-icons nav__icon nav__icon--right">chevron_right</span>}       
-                                        </a>
-                                        <ul className="nav__sub-list">
-                                            { 
-                                                listItem.child_routes !== null && 
-                                                Array.isArray(listItem.child_routes) && 
-                                                listItem.child_routes.map(item => {
-                                                    return (
-                                                        <li className={ item.child_routes === null ? "nav__sub-item" : "nav__sub-item nav__sub-item--session" } key={item.menu_title}>
-                                                            {
-                                                                item.child_routes === null ? 
-                                                                    (
-                                                                        <Link to={item.path} className="nav__sub-link">{item.menu_title}</Link>
-                                                                    ) : (  
-                                                                        <a href="#" className="nav__sub-link nav__sub-link--session">session
-                                                                            <span className="material-icons nav__icon nav__icon--right">chevron_right</span>
-                                                                            <span className="material-icons nav__session-icon">chevron_right</span>
-                                                                        </a>
-                                                                    )
-                                                            }
-
-                                                            <ul className="nav__session-list">
-                                                                {
-                                                                    item.child_routes !== null && 
-                                                                    Array.isArray(item.child_routes) && 
-                                                                    item.child_routes.map(subItem => {
-                                                                        return (
-                                                                            <li className="nav__sub-item" key={subItem.menu_title}>
-                                                                                <a href="#" className="nav__sub-link">{subItem.menu_title}</a>
-                                                                            </li>   
-                                                                        )
-                                                                    })
-                                                                }
-                                                            </ul>
-
-                                                            {/* <ul className="nav__sub-list nav__sub-list--categories">
-                                                                <div className="nav__categories">
+                                        </Link>
+                                        {
+                                            listItem.child_routes !== null && 
+                                            Array.isArray(listItem.child_routes) && (
+                                                <ul className="nav__sub-list">
+                                                    {
+                                                        listItem.child_routes.map(item => {
+                                                            return (
+                                                                <li className={ item.child_routes === null ? "nav__sub-item" : "nav__sub-item nav__sub-item--session" } key={item.menu_title}>
                                                                     {
-                                                                       item.child_routes !== null &&   Object.keys(item.child_routes) &&  console.log(Object.keys(item.child_routes))
+                                                                        item.child_routes === null ? 
+                                                                            (
+                                                                                <Link to={item.path} className="nav__sub-link">{item.menu_title}</Link>
+                                                                            ) : (  
+                                                                                <a href="#" className="nav__sub-link nav__sub-link--session">session
+                                                                                    <span className="material-icons nav__icon nav__icon--right">chevron_right</span>
+                                                                                    <span className="material-icons nav__session-icon">chevron_right</span>
+                                                                                </a>
+                                                                            )
                                                                     }
-                                                                </div>
-                                                            </ul> */}
-                                                            {/* {
-                                                                item.child_routes !== null &&   Object.keys(item.child_routes) && 
-                                                                <ul className="nav__sub-list nav__sub-list--categories">
-                                                                    <div className="nav__categories">
-                                                                        Salut a la communaute des savant 
-                                                                    </div>
-                                                                </ul>
-                                                            } */}
+        
+                                                                    <ul className="nav__session-list">
+                                                                        {
+                                                                            item.child_routes !== null && 
+                                                                            Array.isArray(item.child_routes) && 
+                                                                            item.child_routes.map(subItem => {
+                                                                                return (
+                                                                                    <li className="nav__sub-item" key={subItem.menu_title}>
+                                                                                        <a href="#" className="nav__sub-link">{subItem.menu_title}</a>
+                                                                                    </li>   
+                                                                                )
+                                                                            })
+                                                                        }
+                                                                    </ul> 
+                                                                </li>
+                                                            )
+                                                        })  
+                                                    }
+                                                </ul>
+                                             )
+                                        }
 
-                                                        </li>
-                                                    )
-                                                }) 
-                                            }
-                   
-                                        </ul>
+                                        {
+                                            listItem.child_routes !== null && listItem.type === "mega" && (
+
+                                                <ul className="nav__sub-list nav__sub-list--categories">
+                                                    <div className="nav__categories">
+                                                        <ul className="nav__categories-item">
+                                                            <li className="nav__sub-item nav__sub-item--categories category-js"><a href="#" className="nav__sub-link nav__sub-link--title">men<span className="material-icons nav__icon nav__icon--right">chevron_right</span></a></li>
+                                                            <div className="nav__sub-inner">
+                                                                <li className="nav__sub-item nav__sub-item--categories"><Link  to="/shop" className="nav__sub-link nav__sub-link--categories">t-shirts</Link></li>
+                                                                <li className="nav__sub-item nav__sub-item--categories"><Link  to="/shop" className="nav__sub-link nav__sub-link--categories">jeans</Link></li>
+                                                                <li className="nav__sub-item nav__sub-item--categories"><Link  to="/shop" className="nav__sub-link nav__sub-link--categories">shoes</Link></li>
+                                                                <li className="nav__sub-item nav__sub-item--categories"><Link  to="/shop" className="nav__sub-link nav__sub-link--categories">wallet</Link></li>
+                                                            </div>
+                                                        </ul>
+                                                        <ul className="nav__categories-item">
+                                                            <li className="nav__sub-item nav__sub-item--categories category-js"><a href="#" className="nav__sub-link nav__sub-link--title">women<span className="material-icons nav__icon nav__icon--right">chevron_right</span></a></li>
+                                                            <div className="nav__sub-inner">
+                                                                <li className="nav__sub-item nav__sub-item--categories"><Link  to="/shop" className="nav__sub-link nav__sub-link--categories">western wear</Link></li>
+                                                                <li className="nav__sub-item nav__sub-item--categories"><Link  to="/shop" className="nav__sub-link nav__sub-link--categories">ethnic wear</Link></li>
+                                                                <li className="nav__sub-item nav__sub-item--categories"><Link  to="/shop" className="nav__sub-link nav__sub-link--categories">sports wear</Link></li>
+                                                            </div>
+                                                        </ul>
+                                                        <ul className="nav__categories-item">
+                                                            <li className="nav__sub-item nav__sub-item--categories category-js"><a href="#" className="nav__sub-link nav__sub-link--title">gadgets<span className="material-icons nav__icon nav__icon--right">chevron_right</span></a></li>
+                                                            <div className="nav__sub-inner">
+                                                                <li className="nav__sub-item nav__sub-item--categories"><Link  to="/shop" className="nav__sub-link nav__sub-link--categories">headPhones</Link></li>
+                                                                <li className="nav__sub-item nav__sub-item--categories"><Link  to="/shop" className="nav__sub-link nav__sub-link--categories">laptop</Link></li>
+                                                                <li className="nav__sub-item nav__sub-item--categories"><Link  to="/shop" className="nav__sub-link nav__sub-link--categories">speaker</Link></li>
+                                                                <li className="nav__sub-item nav__sub-item--categories"><Link  to="/shop" className="nav__sub-link nav__sub-link--categories">watch</Link></li>
+                                                            </div>
+                                                        </ul>
+                                                        <ul className="nav__categories-item">
+                                                            <li className="nav__sub-item nav__sub-item--categories category-js"><a href="#" className="nav__sub-link nav__sub-link--title">accessories<span className="material-icons nav__icon nav__icon--right">chevron_right</span></a></li>
+                                                            <div className="nav__sub-inner">
+                                                                <li className="nav__sub-item nav__sub-item--categories"><Link  to="/shop" className="nav__sub-link nav__sub-link--categories">jewellery</Link></li>
+                                                                <li className="nav__sub-item nav__sub-item--categories"><Link  to="/shop" className="nav__sub-link nav__sub-link--categories">belts</Link></li>
+                                                                <li className="nav__sub-item nav__sub-item--categories"><Link  to="/shop" className="nav__sub-link nav__sub-link--categories">handBag</Link></li>
+                                                            </div>
+                                                        </ul>
+                                                    </div>
+                                                </ul>
+                                                // <ul className="nav__sub-list nav__sub-list--categories">
+                                                //     <div className="nav__categories">
+                                                //        { 
+                                                //             Object.keys(listItem.child_routes).forEach(item => {
+                                                //                 listItem.child_routes[item].map(elt => {})
+                                                //             })
+                                                //        } 
+                                                //     </div>
+                                                // </ul>
+                                            )
+                                           
+                                        }
+
                                     </li>
                                 )
                             })
@@ -183,9 +223,6 @@ const Navbar = () => {
                                 <span className="material-icons nav__icon">perm_contact_calendar</span>contact us
                             </a>
                         </li> */}
-
-
-
 
                     </ul> 
                 </div>

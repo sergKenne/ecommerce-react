@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom'
 
 const ProductsSimilar = () => {
     return (
@@ -87,8 +88,11 @@ const ProductsSimilar = () => {
                         </div>
                     </div>
                 </div>
+                {/* <ul className="tabs tabs-fixed-width  similar-product__btn">
+                    <li className="tab"><Link to="/shop"  className="active">show all</Link></li>
+                </ul> */}
                 <ul className="tabs tabs-fixed-width  similar-product__btn">
-                    <li className="tab"><a  className="active" href="#">show all</a></li>
+                    <Link to="/shop"><li className="tab"><span className="taBtn tab1 active" id="tab1">show all</span></li></Link>
                 </ul>
             </div>
         </div>
