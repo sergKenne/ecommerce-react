@@ -15,7 +15,7 @@ class ProductsCart extends Component {
         <div className="contain-wrap">
           <div className="shop-card card">
             <div className="shop-card__picture">
-              <img src="image/person.jpg" alt="" className="shop-card__image" />
+              <img src="image/m1.jpg" alt="" className="shop-card__image" />
             </div>
             <div className="shop-card__description">
               <h5 className="shop-card__title">Super Jacket</h5>
@@ -46,7 +46,7 @@ class ProductsCart extends Component {
           </div>
           <div className="shop-card card">
             <div className="shop-card__picture">
-              <img src="image/person.jpg" alt="" className="shop-card__image" />
+              <img src="image/m2.jpg" alt="" className="shop-card__image" />
             </div>
             <div className="shop-card__description">
               <h5 className="shop-card__title">Super Jacket</h5>

@@ -239,7 +239,7 @@ body {
           flex-direction: column;
           justify-content: flex-start;
           background-color: $main_bg;
-          background: url(./assets/image/bg-sidebar.jpg) no-repeat;
+          background: url(./assets/imageBg/bg-sidebar.jpg) no-repeat;
           background-size: cover;
           background-position: 50% center;
           position: fixed;
@@ -561,7 +561,7 @@ body {
       display: flex;
       justify-content: flex-end;
       align-items: center;
-      background: url(./assets/image/slider-1.jpg) no-repeat;
+      background: url(./assets/imageBg/slider-1.jpg) no-repeat;
       background-size: cover;
       height: 566px;
       width: 66%;
@@ -882,6 +882,7 @@ body {
 }
 
 
+
 .tabOpacity {
   
     //display: block;
@@ -975,7 +976,20 @@ body {
 
   &:hover .btn-floating {
       transform: translateY(-35px);
+      //z-index: 200;
   }
+
+//   &__wrap-icon {
+//       border: 3px solid yellow;
+//       display: block;
+//       height: 100%;
+//       border-radius: 100%;
+//       z-index: 200;
+
+//       &:hover {
+//           z-index: 200;
+//       }
+//   }
 }
 
 .card-favorite {
@@ -1032,6 +1046,27 @@ body {
   .empty {
       color: #c8c8c8;
   }
+}
+
+.card .categories__image--category img {
+    display: inline-block;
+    width: auto;
+}
+
+
+
+//test
+
+.waves-effect {
+    //z-index: 9;
+}
+
+.testIcon {
+    height: 30px;
+    width: 30px;
+    background-color: yellow;
+    border-radius: 100%;
+    z-index: 900;
 }
 
 
@@ -1151,6 +1186,7 @@ body {
       height: 172px;    
       border-radius: 14px;
       overflow: hidden;
+      cursor: pointer;
 
       @media screen and (max-width: 1025px) {
           height: 141px;
@@ -1523,7 +1559,7 @@ span.badge {
 
   &__banner {
       height: 314px;
-      background: url(./assets/image/banner_bg.jpg) no-repeat;
+      background: url(./assets/imageBg/banner_bg.jpg) no-repeat;
       background-size: cover;
       background-position: center;
   }
@@ -1629,13 +1665,12 @@ span.badge {
 
   &__tabs-item {
       margin-bottom: 16px;
-     // height: 126px;
+      cursor: pointer;
   }
 
   &__big-image {
       width: 81%;
-      //border: 3px solid greenyellow;
-      
+     
       @media screen and (max-width: 960px) {
           width: 86%;
       }
@@ -1650,16 +1685,12 @@ span.badge {
 
   &__image {
       max-width: 100%;
+     
   }
 
   &__tabs-image {
       max-width: 100%;
       max-height: 100%;
-
-      @media screen and (max-width: 960px) {
-          // min-width: 100%;
-          // min-height: 100%;
-      }
      
   }
 
@@ -1826,7 +1857,8 @@ span.badge {
 
   &__card {
 
-      width: 21.5%;
+      //width: 21.5%;
+      width: 24.5%;
 
       &--categories {
           margin-left: 0;
@@ -2058,6 +2090,17 @@ span.badge {
       height: 16rem;
       padding: 40px;
 
+      &--category {
+          text-align: center;
+
+        //   & > img {
+        //      display: inline-block!important;
+        //      max-width: auto!important; 
+        //      max-height: auto!important;
+        //   }
+      }
+
+
       & > img {
           max-width: 100%;
           max-height: 100%;
@@ -2067,9 +2110,6 @@ span.badge {
 
 .error {
     background-color: #ffffff;
-    // height: 70vh;
-   
-    //min-height: 400px;
     padding: 5rem 0;
     @media screen and (max-width: 590px) {
         padding: 0;

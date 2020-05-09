@@ -1,6 +1,6 @@
 import React from 'react'
 
-import cartImg from '../../assets/image/cart.png'
+//import cartImg from '../../assets/image/cart.png'
 import footerData from '../../assets/js/data/footerData';
 import FooterList from './FooterList'
 import FooterDescription from './FooterDescription';
@@ -20,7 +20,7 @@ function Footer() {
                     </div>
                 </div>
                 <div className="footer__copyright">
-                    <img src={ cartImg } alt="cart" className="footer__cart" />
+                    <img src="image/cart.png" alt="cart" className="footer__cart" />
                     <p className="footer__text footer__text--copyright">© All Rights Reversed | Made With Love by SERGE KENNE for better Web</p>
                 </div>
             </div>

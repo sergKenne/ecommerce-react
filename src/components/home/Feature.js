@@ -1,19 +1,23 @@
 import React, { Component } from 'react';
 import $ from 'jquery'
 
-import M from 'materialize-css/dist/js/materialize.min.js';
+// import M from 'materialize-css/dist/js/materialize.min.js';
 
 import TabsSlide from './TabsSlide'
 
 
 
+
 class Feature extends Component {
 
-    // componentDidMount() {
-    //     var elem = document.querySelector('.tabs');
-    //     var options = {}
-    //     var instance = M.Tabs.init(elem, options);
-    // }
+    componentDidMount() {
+        // var elem = document.querySelector('.tabs');
+        // var options = {}
+        // var instance = M.Tabs.init(elem, options);
+
+        //console.log("Feature.js:componentDidMounted", new Date ) 
+       
+    }
 
    
     render() {

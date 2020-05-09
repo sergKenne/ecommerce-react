@@ -2,10 +2,10 @@ import React from 'react'
 import Banner from '../Banner'
 import Categories from '../categories/Categories'
 
-const Shop = () => {
+const Shop = (props) => {
     return (
         <div className="shop">
-            <Banner/>
+            <Banner title="Products" />
             <Categories/>
         </div>
     )

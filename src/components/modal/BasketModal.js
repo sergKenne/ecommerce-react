@@ -7,7 +7,7 @@ function BasketModal() {
                 <div className="basket-modal__inner">
                     <div className="shop-card shop-card--basket-modal card">
                         <div className="shop-card__picture">
-                            <img src="image/person.jpg" alt="" className="shop-card__image shop-card__image--basket-modal" />
+                            <img src="image/bj1.jpg" alt="" className="shop-card__image shop-card__image--basket-modal" />
                         </div>
                         <div className="shop-card__description shop-card__description--basket-modal">
                             <h5 className="shop-card__title shop-card__title--basket-modal">Super Jacket</h5>

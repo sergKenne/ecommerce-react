@@ -1,11 +1,23 @@
-import React from 'react'
+import React, {useEffect} from 'react'
+import $ from 'jquery'
 
 function Deal() {
+
+
+    useEffect(() => {
+
+        $('.deal__tabs').click(function(event) {
+            $('.deal__image').attr('src', event.target.src );
+        });
+      
+    }, []);
+
+
     return (
         <div className="deal">
             <div className="contain-wrap deal__row">
                 <div className="deal__column">
-                    <img src="image/item_1.jpg" alt="" className="deal__image" />
+                    <img src="image/m1.jpg" alt="" className="deal__image" />
                 </div>
                 <div className="deal__column">
                     <h2 className="main-title deal__title">Deal of the day</h2>
@@ -21,9 +33,9 @@ function Deal() {
                     </p>
                     <a href="#" className="btn btn-small deal__btn">shop now</a>
                     <div className="deal__tabs">
-                        <div className="deal__item"><img src="image/item_1.jpg" alt="" className="deal__tabs-image" /></div>
-                        <div className="deal__item"><img src="image/item_2.jpg" alt="" className="deal__tabs-image" /></div>
-                        <div className="deal__item"><img src="image/item_3.jpg" alt="" className="deal__tabs-image" /></div>
+                        <div className="deal__item"><img src="image/m1.jpg" alt="" className="deal__tabs-image" /></div>
+                        <div className="deal__item"><img src="image/m2.jpg" alt="" className="deal__tabs-image" /></div>
+                        <div className="deal__item"><img src="image/m3.jpg" alt="" className="deal__tabs-image" /></div>
                     </div>
                 </div>
             </div>

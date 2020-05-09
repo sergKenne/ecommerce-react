@@ -1,35 +1,36 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom'
 
-const CartItem = ({ cartElt }) => {
-
+const CartItem = ({cartElt}) => {
+    
     const [btn, setBtn] = useState(true);
 
     const handleSetVisibility = (event) => {
         event.stopPropagation();
-        setBtn(false)
+        setBtn(false);
     }
 
     const showBtn = btn ? (
-                <button onClick={ handleSetVisibility } className="btn-floating halfway-fab waves-effect waves-light btn-large red" href="#">
-                    <i className="material-icons">shopping_cart</i>
+                <button onClick={ handleSetVisibility } className="btn-floating halfway-fab waves-effect waves-light btn-large red btnWrap" href="#">
+                    <span  className="card__wrap-icon"><i className="material-icons">shopping_cart</i></span>
                 </button>
             ) : (
-                <Link to="/cart" className="btn-floating halfway-fab waves-effect waves-light btn-large red">
+                <Link to="/cart"  className="btn-floating halfway-fab waves-effect waves-light btn-large red">
                     <i className="material-icons">visibility</i>
                 </Link>
             );  
   
     return (
-        <span key={ cartElt.id }>
+        <div key={ cartElt.id } >
+          
             <div className="card">
                 <div className="card-image">
-                    <img src={ cartElt.img } />
+                    <Link to={`/products/${cartElt.type}/${cartElt.id}`}><img src={`../../${cartElt.img}`  } /></Link>
                     { showBtn }
-                    <span className="material-icons card-favorite">favorite </span>
+                    <span className="material-icons card-favorite" >favorite </span>
                 </div>
                 <div className="card-content">
-                    <span className="card-title">{ cartElt.title }</span>
+                    <span className="card-title" >{ cartElt.title }</span>
                     <div className="card-footer">
                         <span className="card-price">$<span>{ cartElt.price }</span></span> 
                         <span className="card-rating">
@@ -42,7 +43,7 @@ const CartItem = ({ cartElt }) => {
                     </div>
                 </div>
             </div>
-        </span>
+        </div>
     )
 }
 

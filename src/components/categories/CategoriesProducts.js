@@ -1,6 +1,23 @@
-import React from 'react'
+import React, {useState} from 'react';
+import CardCategory from './CardCategory'
+import db from '../../assets/js/data/db'
+
 
 const CategoriesProducts = () => {
+
+const [productsCategory, setProducts] = useState(db.electronic);
+
+const itemByPage = 9;
+const numberOfPage = Math.ceil(productsCategory.length/itemByPage);
+
+const numberPagination = [];
+for(let i=0; i<numberOfPage; i++) {
+    numberPagination[i] = i+1
+}
+
+console.log(numberPagination);
+
+
     return (
         <div class="categories__inner">
             <div class="categories__top">
@@ -13,196 +30,24 @@ const CategoriesProducts = () => {
             </div>
             <div class="categories__items">
                 <div class="similar-product__item">
-                    <div class="card similar-product__card similar-product__card--categories">
-                        <div class="card-image categories__image">
-                            <img src="image/categorie_1.webp"/>
-                            <a class="btn-floating halfway-fab waves-effect waves-light btn-large red"><i class="material-icons">shopping_cart</i></a>
-                            <span class="material-icons card-favorite">favorite </span>
-                        </div>
-                        <div class="card-content">
-                            <span class="card-title">Digital Watch</span>
-                            <div class="card-footer">
-                                <span class="card-price">$<span>127.5</span></span> 
-                                <span class="card-rating">
-                                    <span class="material-icons">star</span>
-                                    <span class="material-icons">star</span>
-                                    <span class="material-icons">star</span>
-                                    <span class="material-icons">star_half</span>
-                                    <span class="material-icons empty">star</span>  
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card similar-product__card similar-product__card--categories">
-                        <div class="card-image categories__image">
-                            <img src="image/categorie_2.webp"/>
-                            <a class="btn-floating halfway-fab waves-effect waves-light btn-large red"><i class="material-icons">shopping_cart</i></a>
-                            <span class="material-icons card-favorite">favorite </span>
-                        </div>
-                        <div class="card-content">
-                            <span class="card-title">Digital Watch</span>
-                            <div class="card-footer">
-                                <span class="card-price">$<span>127.5</span></span> 
-                                <span class="card-rating">
-                                    <span class="material-icons">star</span>
-                                    <span class="material-icons">star</span>
-                                    <span class="material-icons">star</span>
-                                    <span class="material-icons">star_half</span>
-                                    <span class="material-icons empty">star</span>  
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card similar-product__card similar-product__card--categories">
-                        <div class="card-image categories__image">
-                            <img src="image/categorie_2.webp"/>
-                            <a class="btn-floating halfway-fab waves-effect waves-light btn-large red"><i class="material-icons">shopping_cart</i></a>
-                            <span class="material-icons card-favorite">favorite </span>
-                        </div>
-                        <div class="card-content">
-                            <span class="card-title">Digital Watch</span>
-                            <div class="card-footer">
-                                <span class="card-price">$<span>127.5</span></span> 
-                                <span class="card-rating">
-                                    <span class="material-icons">star</span>
-                                    <span class="material-icons">star</span>
-                                    <span class="material-icons">star</span>
-                                    <span class="material-icons">star_half</span>
-                                    <span class="material-icons empty">star</span>  
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card similar-product__card similar-product__card--categories">
-                        <div class="card-image categories__image">
-                            <img src="image/categorie_2.webp"/>
-                            <a class="btn-floating halfway-fab waves-effect waves-light btn-large red"><i class="material-icons">shopping_cart</i></a>
-                            <span class="material-icons card-favorite">favorite </span>
-                        </div>
-                        <div class="card-content">
-                            <span class="card-title">Digital Watch</span>
-                            <div class="card-footer">
-                                <span class="card-price">$<span>127.5</span></span> 
-                                <span class="card-rating">
-                                    <span class="material-icons">star</span>
-                                    <span class="material-icons">star</span>
-                                    <span class="material-icons">star</span>
-                                    <span class="material-icons">star_half</span>
-                                    <span class="material-icons empty">star</span>  
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card similar-product__card similar-product__card--categories">
-                        <div class="card-image categories__image">
-                            <img src="image/categorie_2.webp"/>
-                            <a class="btn-floating halfway-fab waves-effect waves-light btn-large red"><i class="material-icons">shopping_cart</i></a>
-                            <span class="material-icons card-favorite">favorite </span>
-                        </div>
-                        <div class="card-content">
-                            <span class="card-title">Digital Watch</span>
-                            <div class="card-footer">
-                                <span class="card-price">$<span>127.5</span></span> 
-                                <span class="card-rating">
-                                    <span class="material-icons">star</span>
-                                    <span class="material-icons">star</span>
-                                    <span class="material-icons">star</span>
-                                    <span class="material-icons">star_half</span>
-                                    <span class="material-icons empty">star</span>  
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card similar-product__card similar-product__card--categories">
-                        <div class="card-image categories__image">
-                            <img src="image/categorie_2.webp"/>
-                            <a class="btn-floating halfway-fab waves-effect waves-light btn-large red"><i class="material-icons">shopping_cart</i></a>
-                            <span class="material-icons card-favorite">favorite </span>
-                        </div>
-                        <div class="card-content">
-                            <span class="card-title">Digital Watch</span>
-                            <div class="card-footer">
-                                <span class="card-price">$<span>127.5</span></span> 
-                                <span class="card-rating">
-                                    <span class="material-icons">star</span>
-                                    <span class="material-icons">star</span>
-                                    <span class="material-icons">star</span>
-                                    <span class="material-icons">star_half</span>
-                                    <span class="material-icons empty">star</span>  
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card similar-product__card similar-product__card--categories">
-                        <div class="card-image categories__image">
-                            <img src="image/categorie_3.webp"/>
-                            <a class="btn-floating halfway-fab waves-effect waves-light btn-large red"><i class="material-icons">shopping_cart</i></a>
-                            <span class="material-icons card-favorite">favorite </span>
-                        </div>
-                        <div class="card-content">
-                            <span class="card-title">Digital Watch</span>
-                            <div class="card-footer">
-                                <span class="card-price">$<span>127.5</span></span> 
-                                <span class="card-rating">
-                                    <span class="material-icons">star</span>
-                                    <span class="material-icons">star</span>
-                                    <span class="material-icons">star</span>
-                                    <span class="material-icons">star_half</span>
-                                    <span class="material-icons empty">star</span>  
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card similar-product__card similar-product__card--categories">
-                        <div class="card-image categories__image">
-                            <img src="image/categorie_2.webp"/>
-                            <a class="btn-floating halfway-fab waves-effect waves-light btn-large red"><i class="material-icons">shopping_cart</i></a>
-                            <span class="material-icons card-favorite">favorite </span>
-                        </div>
-                        <div class="card-content">
-                            <span class="card-title">Digital Watch</span>
-                            <div class="card-footer">
-                                <span class="card-price">$<span>127.5</span></span> 
-                                <span class="card-rating">
-                                    <span class="material-icons">star</span>
-                                    <span class="material-icons">star</span>
-                                    <span class="material-icons">star</span>
-                                    <span class="material-icons">star_half</span>
-                                    <span class="material-icons empty">star</span>  
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card similar-product__card similar-product__card--categories">
-                        <div class="card-image categories__image">
-                            <img src="image/categorie_3.webp"/>
-                            <a class="btn-floating halfway-fab waves-effect waves-light btn-large red"><i class="material-icons">shopping_cart</i></a>
-                            <span class="material-icons card-favorite">favorite </span>
-                        </div>
-                        <div class="card-content">
-                            <span class="card-title">Digital Watch</span>
-                            <div class="card-footer">
-                                <span class="card-price">$<span>127.5</span></span> 
-                                <span class="card-rating">
-                                    <span class="material-icons">star</span>
-                                    <span class="material-icons">star</span>
-                                    <span class="material-icons">star</span>
-                                    <span class="material-icons">star_half</span>
-                                    <span class="material-icons empty">star</span>  
-                                </span>
-                            </div>
-                        </div>
-                    </div>
+                    {
+                        productsCategory.map(item => {
+                            return <CardCategory card={item}/>
+                        })
+                    }
                 </div>
             </div>
             <div class="categories__paganation">
                 <ul class="pagination">
                     <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
-                    <li class="active"><a href="#!">1</a></li>
-                    <li class="waves-effect"><a href="#!">2</a></li>
-                    <li class="waves-effect"><a href="#!">3</a></li>
-                    <li class="waves-effect"><a href="#!">4</a></li>
-                    <li class="waves-effect"><a href="#!">5</a></li>
+                    {
+                        numberPagination.map(elt => {
+                            return (
+                                <li class="waves-effect"><a href="#">{elt}</a></li>
+                            )
+                        })
+                    }
+                    {/* <li class="active"><a href="#!">1</a></li> */}
                     <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
                 </ul>
             </div>

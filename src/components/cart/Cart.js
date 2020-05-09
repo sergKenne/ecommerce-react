@@ -6,7 +6,7 @@ import ProductsCart from './ProductsCart'
 const Cart = () => {
     return (
         <div className="shop">
-            <Banner/>
+            <Banner title="Here’s What’s In Your Bag."/>
             <ProductsCart/>
         </div>
     )

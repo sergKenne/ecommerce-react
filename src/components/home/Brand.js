@@ -1,6 +1,12 @@
-import React from 'react'
+import React, {useEffect} from 'react'
+import $ from "jquery"
 
 function Brand() {
+
+    useEffect( () => {
+       
+    });
+
     return (
         <div className="brand">
             <div className="contain-wrap brand__slide">

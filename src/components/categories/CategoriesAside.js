@@ -20,7 +20,7 @@ const CategoriesAside = () => {
                     </p>
                     <p className="categories__checked">
                         <label>
-                            <input type="checkbox" className="filled-in" checked="checked"/>
+                            <input type="checkbox" className="filled-in" />
                             <span>HP <span className=" badge grey">445</span></span>
                         </label>
                     </p>
@@ -38,7 +38,7 @@ const CategoriesAside = () => {
                     </p>
                     <p className="categories__checked">
                         <label>
-                            <input type="checkbox" className="filled-in" checked="checked"/>
+                            <input type="checkbox" className="filled-in" />
                             <span>Insignia<span className=" badge grey">445</span></span>
                         </label>
                     </p>
@@ -55,7 +55,7 @@ const CategoriesAside = () => {
                     </p>
                     <p className="categories__checked">
                         <label>
-                            <input type="checkbox" className="filled-in" checked="checked"/>
+                            <input type="checkbox" className="filled-in" />
                             <span>Dask Kit<span className=" badge grey">445</span></span>
                         </label>
                     </p>
@@ -73,7 +73,7 @@ const CategoriesAside = () => {
                     </p>
                     <p className="categories__checked">
                         <label>
-                            <input type="checkbox" className="filled-in" checked="checked" />
+                            <input type="checkbox" className="filled-in" />
                             <span>French door refrig<span className=" badge grey">445</span></span>
                         </label>
                     </p>
@@ -91,7 +91,7 @@ const CategoriesAside = () => {
                     </p>
                     <p className="categories__checked">
                         <label>
-                            <input type="checkbox" className="filled-in" checked="checked" />
+                            <input type="checkbox" className="filled-in" />
                             <span>Deck Installation Parts<span className=" badge grey">445</span></span>
                         </label>
                     </p>
@@ -109,7 +109,7 @@ const CategoriesAside = () => {
                     </p>
                     <p className="categories__checked">
                         <label>
-                            <input type="checkbox" className="filled-in" checked="checked"/>
+                            <input type="checkbox" className="filled-in" />
                             <span>Printer Ink & Toner<span className=" badge grey">445</span></span>
                         </label>
                     </p>

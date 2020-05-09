@@ -1,96 +1,26 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import db from '../../assets/js/data/db';
+import CartItem from '../../components/home/CartItem'
 
-const ProductsSimilar = () => {
+const ProductsSimilar = ({productId}) => {
+
+    const productType = db.products.find( item => item.id === parseInt(productId) ).type;
+    var productSimilar = db.products.filter(product => product.type === productType)
+
     return (
         <div className="similar-product shop__similar-product">
             <div className="contain-wrap">
                 <h2 className="main-title similar-product__title">You Might Also Like</h2>
                 <div className="similar-product__item">
-                    <div className="card similar-product__card">
-                        <div className="card-image">
-                            <img src="image/gadget_2.jpg" />
-                            <a className="btn-floating halfway-fab waves-effect waves-light btn-large red"><i className="material-icons">shopping_cart</i></a>
-                            <span className="material-icons card-favorite">favorite </span>
-                        </div>
-                        <div className="card-content">
-                            <span className="card-title">Digital Watch</span>
-                            <div className="card-footer">
-                                <span className="card-price">$<span>127.5</span></span> 
-                                <span className="card-rating">
-                                    <span className="material-icons">star</span>
-                                    <span className="material-icons">star</span>
-                                    <span className="material-icons">star</span>
-                                    <span className="material-icons">star_half</span>
-                                    <span className="material-icons empty">star</span>  
-                                </span>
+                    {
+                       productSimilar.map((item, index) => index < 4 && (
+                            <div className="similar-product__card">
+                                <CartItem cartElt={item}/>
                             </div>
-                        </div>
-                    </div>
-                    <div className="card similar-product__card">
-                        <div className="card-image">
-                            <img src="image/item_24.jpg"/>
-                            <a className="btn-floating halfway-fab waves-effect waves-light btn-large red"><i className="material-icons">shopping_cart</i></a>
-                            <span className="material-icons card-favorite">favorite </span>
-                        </div>
-                        <div className="card-content">
-                            <span className="card-title">Digital Watch</span>
-                            <div className="card-footer">
-                                <span className="card-price">$<span>127.5</span></span> 
-                                <span className="card-rating">
-                                    <span className="material-icons">star</span>
-                                    <span className="material-icons">star</span>
-                                    <span className="material-icons">star</span>
-                                    <span className="material-icons">star_half</span>
-                                    <span className="material-icons empty">star</span>  
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="card similar-product__card">
-                        <div className="card-image">
-                            <img src="image/item_2.jpg"/>
-                            <a className="btn-floating halfway-fab waves-effect waves-light btn-large red"><i className="material-icons">shopping_cart</i></a>
-                            <span className="material-icons card-favorite">favorite </span>
-                        </div>
-                        <div className="card-content">
-                            <span className="card-title">Digital Watch</span>
-                            <div className="card-footer">
-                                <span className="card-price">$<span>127.5</span></span> 
-                                <span className="card-rating">
-                                    <span className="material-icons">star</span>
-                                    <span className="material-icons">star</span>
-                                    <span className="material-icons">star</span>
-                                    <span className="material-icons">star_half</span>
-                                    <span className="material-icons empty">star</span>  
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="card similar-product__card">
-                        <div className="card-image">
-                            <img src="image/item_21.jpg"/>
-                            <a className="btn-floating halfway-fab waves-effect waves-light btn-large red"><i className="material-icons">shopping_cart</i></a>
-                            <span className="material-icons card-favorite">favorite </span>
-                        </div>
-                        <div className="card-content">
-                            <span className="card-title">Digital Watch</span>
-                            <div className="card-footer">
-                                <span className="card-price">$<span>127.5</span></span> 
-                                <span className="card-rating">
-                                    <span className="material-icons">star</span>
-                                    <span className="material-icons">star</span>
-                                    <span className="material-icons">star</span>
-                                    <span className="material-icons">star_half</span>
-                                    <span className="material-icons empty">star</span>  
-                                </span>
-                            </div>
-                        </div>
-                    </div>
+                       ) )  
+                    }
                 </div>
-                {/* <ul className="tabs tabs-fixed-width  similar-product__btn">
-                    <li className="tab"><Link to="/shop"  className="active">show all</Link></li>
-                </ul> */}
                 <ul className="tabs tabs-fixed-width  similar-product__btn">
                     <Link to="/shop"><li className="tab"><span className="taBtn tab1 active" id="tab1">show all</span></li></Link>
                 </ul>
