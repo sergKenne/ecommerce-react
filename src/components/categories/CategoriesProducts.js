@@ -1,54 +1,76 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import CardCategory from './CardCategory'
 import db from '../../assets/js/data/db'
-
+import $ from 'jquery'
 
 const CategoriesProducts = () => {
 
-const [productsCategory, setProducts] = useState(db.electronic);
+    const itemByPage = 9; 
+    const numberOfPage = Math.ceil(db.electronic.length/itemByPage);   
+    //var page = 1;
+    var trimStart = 0;
+    var trimEnd = itemByPage;
+   
+    const [productsCategory , setProductsCategory ] = useState(db.electronic.slice(trimStart, trimEnd));
+   
 
-const itemByPage = 9;
-const numberOfPage = Math.ceil(productsCategory.length/itemByPage);
+    const numberPagination = [];
+    for(let i=0; i<numberOfPage; i++) {
+        numberPagination[i] = i+1
+    }
 
-const numberPagination = [];
-for(let i=0; i<numberOfPage; i++) {
-    numberPagination[i] = i+1
-}
+    const handleChangePage = (ind) => {
 
-console.log(numberPagination);
+        trimStart = (ind-1)*itemByPage;
+        trimEnd = trimStart+itemByPage;
+        // startIndex = (itemByPage*ind-itemByPage) - itemByPage*ind ;
+        // endIndex = itemByPage*ind;
+        setProductsCategory(db.electronic.slice(trimStart, trimEnd ));
+
+    }
+
+    useEffect(() => {
+
+        $(".pag").click(function(){
+            $(".pag").removeClass("active");
+            $(this).addClass("active");
+        })
+    })
 
 
     return (
-        <div class="categories__inner">
-            <div class="categories__top">
-                <select class="categories__select-item">
-                    <option value=""  selected>Features</option>
+        <div className="categories__inner">
+            <div className="categories__top">
+                <select className="categories__select-item">
+                    <option value="" >Features</option>
                     <option value="1">Lowest Price</option>
                     <option value="2">Highest Price</option>
                 </select>
-                <div class="categories__result-item"><span>2 388</span> results found</div>
+                <div className="categories__result-item"><span>2 388</span> results found</div>
             </div>
-            <div class="categories__items">
-                <div class="similar-product__item">
+            <div className="categories__items">
+                <div className="similar-product__item">
                     {
                         productsCategory.map(item => {
-                            return <CardCategory card={item}/>
+                            return <CardCategory card={item} key={item.id}/>
                         })
                     }
                 </div>
             </div>
-            <div class="categories__paganation">
-                <ul class="pagination">
-                    <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+            <div className="categories__pagination">
+                <ul className="pagination">
+                    <li className="disabled"><a href="#"><i className="material-icons">chevron_left</i></a></li>
                     {
-                        numberPagination.map(elt => {
+                        numberPagination.map( elt => {
                             return (
-                                <li class="waves-effect"><a href="#">{elt}</a></li>
+                                <li className={ elt === 1 ? "waves-effect active pag" : "waves-effect pag"} key={elt}>
+                                    <span onClick={() => handleChangePage(elt) }>{elt}</span>
+                                </li>
                             )
                         })
                     }
-                    {/* <li class="active"><a href="#!">1</a></li> */}
-                    <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+                    {/* <li className="active"><a href="#!">1</a></li> */}
+                    <li className="waves-effect"><a href="#"><i className="material-icons">chevron_right</i></a></li>
                 </ul>
             </div>
         </div>

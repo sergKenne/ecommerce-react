@@ -1,15 +1,8 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import reviewData from '../../assets/js/data/reviewData';
-import $ from 'jquery'
-//import { script } from '../../assets/js/script';
 
 function Review() {
 
-    useEffect( ()=> {
-       
-
-       
-    },[])
     return (
         <div className="review">
             <div className="contain-wrap">

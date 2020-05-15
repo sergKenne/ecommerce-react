@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom'
+//import Cart from '../cart/Cart';
 
 const CardCategory = ({card}) => {
 
@@ -11,40 +12,41 @@ const CardCategory = ({card}) => {
     }
 
    
-        const showBtn = btn ? (
-            <button onClick={ handleSetVisibility } className="btn-floating halfway-fab waves-effect waves-light btn-large red btnWrap" href="#">
-                <span  className="card__wrap-icon"><i className="material-icons">shopping_cart</i></span>
-            </button>
-        ) : (
-            <Link to="/cart"  className="btn-floating halfway-fab waves-effect waves-light btn-large red">
-                <i className="material-icons">visibility</i>
-            </Link>
-        );  
+    const showBtn = btn ? (
+        <button onClick={ handleSetVisibility } className="btn-floating halfway-fab waves-effect waves-light btn-large red btnWrap" href="#">
+            <span  className="card__wrap-icon"><i className="material-icons">shopping_cart</i></span>
+        </button>
+    ) : (
+        <Link to="/cart"  className="btn-floating halfway-fab waves-effect waves-light btn-large red">
+            <i className="material-icons">visibility</i>
+        </Link>
+    );  
 
-
-        return (
-            <div class="card similar-product__card similar-product__card--categories">
-                <div class="card-image categories__image categories__image--category">
-                    <img src={card.img}/>
-                    {showBtn}
-                    <span class="material-icons card-favorite">favorite </span>
-                </div>
-                <div class="card-content">
-                <span class="card-title">{card.title}</span>
-                    <div class="card-footer">
-                        <span class="card-price">$<span>{card.price}</span></span> 
-                        <span class="card-rating">
-                            <span class="material-icons">star</span>
-                            <span class="material-icons">star</span>
-                            <span class="material-icons">star</span>
-                            <span class="material-icons">star_half</span>
-                            <span class="material-icons empty">star</span>  
-                        </span>
-                    </div>
+    return (
+        <div className="card similar-product__card similar-product__card--categories">
+            <div className="card-image categories__image categories__image--category">
+                {/* <Link to={`/products/${card.brand}/${card.id}`}><img src={`../../${card.img}`  } /></Link> */}
+                <Link to={`/products/women/17`}><img src={`../../${card.img}`} alt={card.title} /></Link>
+                {/* <img src={card.img}/> */}
+                {showBtn}
+                <span className="material-icons card-favorite">favorite </span>
+            </div>
+            <div className="card-content">
+            <span className="card-title card-title--category">{card.title}</span>
+                <div className="card-footer">
+                    <span className="card-price">$<span>{card.price}</span></span> 
+                    <span className="card-rating">
+                        <span className="material-icons">star</span>
+                        <span className="material-icons">star</span>
+                        <span className="material-icons">star</span>
+                        <span className="material-icons">star_half</span>
+                        <span className="material-icons empty">star</span>  
+                    </span>
                 </div>
             </div>
+        </div>
 
-        )
+    )
 }
 
 export default CardCategory

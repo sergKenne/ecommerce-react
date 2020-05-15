@@ -53,7 +53,10 @@ export function script() {
         });
 
         $('.basket-modal__inner').click(function(event) {
-          event.stopPropagation();
+          // $('.like-modal-js').addClass('show');
+          // $('.basket-modal-js').addClass('show');
+
+          //event.stopPropagation();
         });
 
 

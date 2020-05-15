@@ -1,7 +1,8 @@
-import React, { useState, useEffect, Component} from 'react'
-import $ from 'jquery'
+import React, { Component} from 'react';
+import {connect} from 'react-redux';
 import db from '../../assets/js/data/db'
 import ProductPictures from './ProductPictures'
+import {addProductToBasket} from '../../action/addProductToBasket'
 
 class ProductsDescription extends Component {
 
@@ -22,14 +23,14 @@ class ProductsDescription extends Component {
     componentDidMount() {
 
         this.setState({
-            data: db.products.find( item => item.id == this.props.productId )
-        }, function(){console.log(this.state)});
+            data: db.products.find( item => item.id === parseInt(this.props.productId) )
+        });
     }
 
    
     render() {
 
-        console.log("id in ProductsDescription:", this.props.productId)
+        //console.log("id in ProductsDescription:", this.props.productId)
 
         const {title, price } = this.state.data;
 
@@ -91,7 +92,7 @@ class ProductsDescription extends Component {
                     </div>
                     <span className="product__review">add a review</span>
                     <div className="product__row-btn">
-                        <a href="#" className="btn btn-small product__btn">add to cart</a>
+                        <button className="btn btn-small product__btn" onClick={ () => this.props.addBasket( parseInt(this.props.productId) ) }>add to cart</button>
                         <a href="#" className="btn btn-small product__btn product__btn--white">buy now</a>
                     </div>
                     <div className="product__social">
@@ -108,4 +109,19 @@ class ProductsDescription extends Component {
     }
 }
 
-export default ProductsDescription
+const mapStateToProps = (state) => {
+    return {
+        productsBasket: state.productsBasket
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        addBasket: (item) => dispatch(addProductToBasket(item))
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps) (ProductsDescription)
+
+
+//export default ProductsDescription

@@ -1,11 +1,6 @@
-import React, {useEffect} from 'react'
-import $ from "jquery"
+import React from 'react'
 
 function Brand() {
-
-    useEffect( () => {
-       
-    });
 
     return (
         <div className="brand">

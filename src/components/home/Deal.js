@@ -3,7 +3,6 @@ import $ from 'jquery'
 
 function Deal() {
 
-
     useEffect(() => {
 
         $('.deal__tabs').click(function(event) {
@@ -12,12 +11,11 @@ function Deal() {
       
     }, []);
 
-
     return (
         <div className="deal">
             <div className="contain-wrap deal__row">
                 <div className="deal__column">
-                    <img src="image/m1.jpg" alt="" className="deal__image" />
+                    <img src="image/m1.jpg" alt="pic" className="deal__image" />
                 </div>
                 <div className="deal__column">
                     <h2 className="main-title deal__title">Deal of the day</h2>
@@ -31,7 +29,7 @@ function Deal() {
                         <span className="deal__counter">11</span>House<span className="deal__counter">50
                         </span>Minutes<span className="deal__counter">17</span>Seconds
                     </p>
-                    <a href="#" className="btn btn-small deal__btn">shop now</a>
+                    <button className="btn btn-small deal__btn">shop now</button>
                     <div className="deal__tabs">
                         <div className="deal__item"><img src="image/m1.jpg" alt="" className="deal__tabs-image" /></div>
                         <div className="deal__item"><img src="image/m2.jpg" alt="" className="deal__tabs-image" /></div>

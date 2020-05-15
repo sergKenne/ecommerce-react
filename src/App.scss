@@ -103,16 +103,40 @@ body {
   }
 
   &__top-item {
-  //    border: 1px solid gold;
-
+ 
       &--currency {
-           @media screen and (max-width: 960px) {
-              display: none;
-          }
+
+        .select-wrapper{
+            background-color: #fff;
+            border-radius: 4px;
+            width: 118px;
+            border-bottom: none;
+        }
+
+        .select-wrapper input.select-dropdown  {
+          border-bottom: none;
+
+            &:active, &:focus {
+                border-bottom: none;
+            }
+        }
+         
+        @media screen and (max-width: 960px) {
+            display: none;
+        }
       }
 
          
   }
+
+//   &__top-down-icon {
+//       position: absolute;
+//       z-index: 0;
+//       right: 5px;
+//       top:5px;
+//       cursor: pointer;
+//       border: 1px solid red;
+//   }
 
   &__top-logo {
 
@@ -889,45 +913,28 @@ body {
     opacity: 1;
     z-index: 2;
 }
+
+.pagination li span {
+    color: #444;
+    display: inline-block;
+    font-size: 1.2rem;
+    padding: 0 10px;
+    line-height: 30px;
+    text-align: center;
+}
+
+
+
+// .select-wrapper input.select-dropdown {
+   
+//    // background: #fff;
+//     // width: 118px;
+//     // border-radius: 4px;
+//     // border: 1px solid #add;
+// }
   
 
 
-// .tabs.tabs-fixed-width .tab {
-//   flex:0;
-//   margin: 0 8px;
-
-//   @media screen and (max-width: 376px) {
-//       margin-bottom: 1rem;
-//    }
-// }
-
-// .tabs .tab a {
-//   color: rgba(0, 0, 0, 0.87);
-//   font-size: 0.875rem;
-//   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
-//   font-weight: 700;
-//   line-height: 1.75;
-//   line-height: 48px;
-//   letter-spacing: 0.02857em;
-//   text-transform: uppercase;
-
-// }
-
-// .tabs .tab a:hover,.tabs .tab a:active:hover {
-//   background-color: rgba(0, 0, 0, 0.04);
-//   color: rgba(0, 0, 0, 0.87);
-// }
-
-// .tabs .tab a:focus, .tabs .tab a:focus.active:hover, .tabs .tab a.active:hover {
-//   box-shadow: 0px 5px 5px -3px rgba(0,0,0,0.2), 0px 8px 10px 1px rgba(0,0,0,0.14), 0px 3px 14px 2px rgba(0,0,0,0.12);
-// }
-
-// .tabs .tab a:focus, .tabs .tab a:focus.active, .tabs .tab a.active {
-//   color: rgba(0, 0, 0, 0.87);
-//   box-shadow: 0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12);
-//   background-color: #f7f7f7;
-//   border-radius: 4px;
-// }
 
 .tabs .indicator {
   background-color: transparent;
@@ -973,23 +980,12 @@ body {
 .card {
   margin: 0 15px;
   margin-bottom: 2rem;
-
+  
   &:hover .btn-floating {
       transform: translateY(-35px);
       //z-index: 200;
   }
 
-//   &__wrap-icon {
-//       border: 3px solid yellow;
-//       display: block;
-//       height: 100%;
-//       border-radius: 100%;
-//       z-index: 200;
-
-//       &:hover {
-//           z-index: 200;
-//       }
-//   }
 }
 
 .card-favorite {
@@ -1005,6 +1001,12 @@ body {
   
 }
 
+.card .card-content .card-title--category {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .card .card-title {
   font-size: 1.25rem;
   line-height: 1.75rem;
@@ -1015,9 +1017,12 @@ body {
   margin-bottom: 15px;
   cursor: pointer;
 
+ 
+
   &:hover {
       color: $btn_color;
   }
+
 }
 
 .card-image {
@@ -1894,6 +1899,7 @@ span.badge {
   margin-bottom: 25px;
 
   &--basket-modal {
+      justify-content: stretch;
       padding: 10px;
       margin-bottom: 0;
       box-shadow: none;
@@ -1910,8 +1916,14 @@ span.badge {
 
       @media screen and (max-width: 426px) {
           width: 100%;
-          //margin-bottom: 15px;
       }
+
+      &--modal {
+        @media screen and (max-width: 426px) {
+            width: 45%;
+        }
+      }
+
   }
 
   &__image {
@@ -1933,6 +1945,8 @@ span.badge {
 
       &--basket-modal {
           text-align: left;
+          flex: 1 1 auto;
+          padding-left: 15px;
       }
   }
 
@@ -2176,16 +2190,26 @@ span.badge {
 
   &__inner {
       width: 300px;
-      max-height: 500px;
+     
       background-color: #ffffff;
       border-radius: 3px;
       position: fixed;
       margin-left: auto;
       top: 70px;
+      z-index: 100;
+      box-shadow: 0px 5px 5px -3px rgba(0,0,0,0.2), 0px 8px 10px 1px rgba(0,0,0,0.14), 0px 3px 14px 2px rgba(0,0,0,0.12);
+      
 
   }
 
+  &__inner-card {
+       max-height: 375px;
+      overflow-y: scroll;
+  }
+
   &__inner-icons {
+      display: flex;
+      flex-direction: row;
       opacity: 0;
   }
 
@@ -2193,6 +2217,7 @@ span.badge {
      // border: 1px solid red;
       height: 34px;
       width: 34px;
+      margin-left: 5px;
       line-height: 34px;
       border-radius: 100%;
       color: #ffffff;

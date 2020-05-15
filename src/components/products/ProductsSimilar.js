@@ -15,7 +15,7 @@ const ProductsSimilar = ({productId}) => {
                 <div className="similar-product__item">
                     {
                        productSimilar.map((item, index) => index < 4 && (
-                            <div className="similar-product__card">
+                            <div className="similar-product__card" key={item.id}>
                                 <CartItem cartElt={item}/>
                             </div>
                        ) )  

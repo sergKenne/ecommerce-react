@@ -1,11 +1,10 @@
-import React, {useEffect, useState} from 'react'
+import React from 'react'
 import Banner from '../Banner'
 import ProductsDescription from './ProductsDescription'
 import ProductsSimilar from './ProductsSimilar'
-import $ from 'jquery'
 
 const Products = (props) => {
-   
+
     const path = props.location.pathname.split("/");
     const productId= props.location.pathname.split("/")[path.length-1];
 
