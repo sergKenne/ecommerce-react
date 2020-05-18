@@ -312,7 +312,6 @@ body {
   position: relative;
   display: block;
   text-transform: uppercase;
-  cursor: pointer;
 }
 
 @media screen and (max-width: 1200px) {
@@ -1080,9 +1079,14 @@ body {
   top: 18px;
   color: rgba(0, 0, 0, 0.4);
   cursor: pointer;
+  font-size: 2.5rem;
 }
 
 .card-favorite:hover {
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.card-favorite--like {
   color: rgba(0, 0, 0, 0.87);
 }
 
@@ -1749,6 +1753,26 @@ span.badge {
   padding: 0 15px;
 }
 
+.shop__empty {
+  text-align: center;
+}
+
+.shop__empty-title {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  margin-top: 30px;
+  margin-bottom: .9375rem;
+  text-transform: capitalize;
+}
+
+.shop__empty-shopping {
+  color: #283593;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1;
+  text-transform: capitalize;
+}
+
 .product__row {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1986,6 +2010,7 @@ span.badge {
   display: inline-block;
   height: 40px;
   width: 40px;
+  margin-right: 5px;
   font-weight: 400;
   line-height: 36px;
   text-align: center;
@@ -2437,6 +2462,12 @@ span.badge {
   padding: 0;
 }
 
+.basket-modal__alert {
+  font-size: .875rem;
+  text-transform: capitalize;
+  text-align: center;
+}
+
 .navbar-fixed-top {
   position: fixed;
   top: 0;
@@ -2485,27 +2516,6 @@ span.badge {
   -webkit-transform: rotate(-90deg);
           transform: rotate(-90deg);
 }
-
-
-
-/*========= sweetalert2 ========== */
-
-.swal2-html-container {
-  font-size: 1.25rem;
-    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
-    font-weight: 700;
-    line-height: 1.6;
-    letter-spacing: 0.0075em;
-}
-
-.swal2-styled {
-  margin: 1.6125em;
-  padding: .625em 1.1em;
-  box-shadow: none;
-  font-weight: 500;
-}
-
-
 
 .footer {
   background-color: #000;

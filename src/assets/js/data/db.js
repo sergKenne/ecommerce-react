@@ -116,17 +116,17 @@ const db = {
             },
 
 
-            {
-                "id": 11,
-                "title": "black t-shirt",
-                "img": "image/men_black-t-shirt.jpg",
-                "price": 48,
-                "quantity": 1,
-                "isFreeShipping": true,
-                "type": "men",
-                "tabs": ["image/ts1.jpg", "image/ts2.jpg", "image/ts3.jpg", "image/ts4.jpg", "image/ts5.jpg"]
+            // {
+            //     "id": 11,
+            //     "title": "black t-shirt",
+            //     "img": "image/men_black-t-shirt.jpg",
+            //     "price": 48,
+            //     "quantity": 1,
+            //     "isFreeShipping": true,
+            //     "type": "men",
+            //     "tabs": ["image/ts1.jpg", "image/ts2.jpg", "image/ts3.jpg", "image/ts4.jpg", "image/ts5.jpg"]
             
-            },
+            // },
             {
                 "id": 12,
                 "title": "black t-shirt",

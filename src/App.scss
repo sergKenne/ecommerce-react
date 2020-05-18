@@ -994,8 +994,13 @@ body {
   top: 18px;
   color: rgba(0, 0, 0, 0.4);
   cursor: pointer;
+  font-size: 2.5rem;
 
   &:hover {
+      color: rgba(0, 0, 0, 0.87);
+  }
+
+  &--like {
       color: rgba(0, 0, 0, 0.87);
   }
   
@@ -1617,6 +1622,27 @@ span.badge {
       margin-bottom: 1.5rem;
       padding: 0 15px;
   }
+
+  &__empty {
+      text-align: center;
+  }
+
+  &__empty-title {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    margin-top: 30px;
+    margin-bottom: .9375rem;
+    text-transform: capitalize;
+
+  }
+
+  &__empty-shopping {
+    color: #283593;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1;
+    text-transform: capitalize;
+  }
 }
 
 .product {
@@ -1827,6 +1853,7 @@ span.badge {
       display: inline-block;
       height: 40px;
       width: 40px;
+      margin-right: 5px;
       font-weight: 400;
       line-height: 36px;
       text-align: center;
@@ -2205,6 +2232,7 @@ span.badge {
   &__inner-card {
        max-height: 375px;
       overflow-y: scroll;
+      overflow-x: hidden;
   }
 
   &__inner-icons {
@@ -2232,6 +2260,12 @@ span.badge {
   &__btn {
       width: 100%;
       padding: 0;
+  }
+
+  &__alert {
+    font-size: .875rem;
+    text-transform: capitalize;
+    text-align: center;
   }
 }
 

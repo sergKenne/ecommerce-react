@@ -1,70 +1,39 @@
 import React, {useState, useEffect} from 'react';
 import { connect } from 'react-redux';
 import {removeProductFromBasket} from '../../action/removeProductInBasket';
-//import {updateQuantity} from '../../action/updateQuantity';
+import {updateQuantity} from '../../action/updateQuantity';
 import M from "materialize-css/dist/js/materialize.min.js";
 import Swal from 'sweetalert2'
 
-function ShopCard({card, productsBasket, removeProduct, updateQuantity , sumByCard}) {
+function ShopCard({card, productsBasket, removeProduct, updateQuantity , totalPrice}) {
 
-    const [quantity, setQuantity] = useState(1);
-    const [total, setTotal] = useState(card.price)
+    const [quantity, setQuantity] = useState(card.quantity);
+    const [totalByCard, setTotal] = useState( (card.price * card.quantity).toFixed(2) )
 
     const handleSelected = (e) => {
         setQuantity(e.target.value);
         const sumProd = (parseInt(e.target.value) * card.price).toFixed(2)
         setTotal( sumProd); 
-    }
 
-    //test
-
-    const test = () => {
-        Swal.fire({
-            title: 'Are you sure?',
-            text: "You won't be able to revert this!",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, delete it!'
-          }).then((result) => { 
-            if (result.value) {
-                console.log("Deleted")
-              Swal.fire(
-                'Deleted!',
-                'Your file has been deleted.',
-                'success'
-              )
-            }
-          })
-    }
-
-
-
-
-
-
-
-    useEffect(() => {
-        var elems = document.querySelectorAll("select");
-        M.FormSelect.init(elems, {});
-    },[])
-
-    useEffect(() => {
-       
         let prod = productsBasket.find(item => item.id === card.id);
-        prod = {...prod, quantity: parseInt(quantity)}
+        prod = {...prod, quantity: parseInt(e.target.value)}
         let ind = 0 ;
         productsBasket.forEach((el, index) =>{
             if(el.id === card.id ) ind = index
         });
         
         productsBasket[ind] = prod;
-        console.log("productsBasket after:", productsBasket)
-        //localStorage.setItem("productsInBasket",JSON.stringify(productsBasket));
-        sumByCard(productsBasket);
+        updateQuantity(productsBasket);
+    }
 
-    },[quantity, productsBasket]);
+    useEffect(() => {
+        var elems = document.querySelectorAll("select");
+        M.FormSelect.init(elems, {});
+    },[])
+
+    useEffect(()=>{
+        totalPrice(productsBasket)
+    }, [quantity,productsBasket])
 
     const remove = (id) => {
         Swal.fire({
@@ -78,11 +47,10 @@ function ShopCard({card, productsBasket, removeProduct, updateQuantity , sumByCa
             confirmButtonText: 'Yes'
           }).then((result) => { 
             if (result.value) {
-                
+
                removeProduct(id)
             }
-          })
-        
+        })  
     }
 
     return (
@@ -100,7 +68,7 @@ function ShopCard({card, productsBasket, removeProduct, updateQuantity , sumByCa
             <div className=" shop-card__form">
             <label>Quantity</label>
             <div className="input-field shop-card__select">
-                <select value={ quantity }  onChange={ handleSelected }>
+                <select value={quantity}  onChange={ handleSelected }>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -111,10 +79,9 @@ function ShopCard({card, productsBasket, removeProduct, updateQuantity , sumByCa
             </div>
             </div>
             <p className="shop-card__price">
-            $<span className="shop-card__price-counter" onClick={test}>{total}</span>
+            $<span className="shop-card__price-counter">{totalByCard}</span>
             </p>
             <div className="">
-            {/* <span className="material-icons shop-card__icon" onClick={() => removeProduct(card.id)}>delete</span> */}
             <span className="material-icons shop-card__icon" onClick={() => remove(card.id)}>delete</span>
             </div>
         </div>
@@ -130,7 +97,7 @@ const mapStateToProps = (state) => {
   const mapStateToDispatch = dispatch => {
     return {
       removeProduct: (id) => dispatch(removeProductFromBasket(id)),
-      //updateQuantity: (basket) => dispatch(updateQuantity(basket))
+      updateQuantity: (basket) => dispatch(updateQuantity(basket))
     }
   }
   

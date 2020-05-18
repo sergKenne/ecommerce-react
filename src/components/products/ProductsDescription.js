@@ -1,13 +1,15 @@
 import React, { Component} from 'react';
 import {connect} from 'react-redux';
-import db from '../../assets/js/data/db'
-import ProductPictures from './ProductPictures'
-import {addProductToBasket} from '../../action/addProductToBasket'
+import {Link} from 'react-router-dom';
+import db from '../../assets/js/data/db';
+import ProductPictures from './ProductPictures';
+import {addProductToBasket} from '../../action/addProductToBasket';
+import Swal from 'sweetalert2';
 
 class ProductsDescription extends Component {
 
     state = {
-        data: {
+        dataDescription: {
             // "id": 15,
             // "title": "vintage jean",
             // "img": "image/men_vintage-jean.jpg",
@@ -16,23 +18,51 @@ class ProductsDescription extends Component {
             // "type": "men",
             // "tabs": ["image/vj1.jpg", "image/vj2.jpg", "image/vj3.jpg", "image/vj4.jpg", "image/vj5.jpg"]
         
+        },
+        view: false
+    }
+
+    addProduct = () => {
+
+        if(this.props.productsBasket.length ) {
+            this.setState({view: true});
+            if(this.props.productsBasket.find(elt => elt.id === this.state.dataDescription.id )) {
+                console.log("incart");
+            } else {
+                // this.setState({view: true});
+                this.props.addBasket(this.state.dataDescription);
+
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    text: 'Your product Is Successfully added!',
+                    showConfirmButton: true,
+                    confirmButtonColor: '#ff5722',
+                })
+            }
+
+        } else {
+            this.props.addBasket(this.state.dataDescription);
+
+            Swal.fire({
+                position: 'center',
+                icon: 'success',
+                text: 'Your product Is Successfully added!',
+                showConfirmButton: true,
+                confirmButtonColor: '#ff5722',
+            })
         }
     }
     
-
     componentDidMount() {
-
         this.setState({
-            data: db.products.find( item => item.id === parseInt(this.props.productId) )
+            dataDescription: db.products.find( item => item.id === parseInt(this.props.productId) )
         });
     }
 
-   
     render() {
-
-        //console.log("id in ProductsDescription:", this.props.productId)
-
-        const {title, price } = this.state.data;
+        
+        const {title, price } = this.state.dataDescription;
 
         return (
             <div className="contain-wrap product__row"> 
@@ -61,7 +91,7 @@ class ProductsDescription extends Component {
                             <div className="product__form-item">
                                 <div className="input-field">
                                     <select>
-                                        <option value="" disabled >Color</option>
+                                        <option value="" >Color</option>
                                         <option value="1">Option 1</option>
                                         <option value="2">Option 2</option>
                                         <option value="3">Option 3</option>
@@ -71,7 +101,7 @@ class ProductsDescription extends Component {
                             <div className="product__form-item">
                                 <div className="input-field">
                                     <select>
-                                        <option value="" disabled >Size</option>
+                                        <option value="" >Size</option>
                                         <option value="1">Option 1</option>
                                         <option value="2">Option 2</option>
                                         <option value="3">Option 3</option>
@@ -81,7 +111,7 @@ class ProductsDescription extends Component {
                             <div className="product__form-item">
                                 <div className="input-field">
                                     <select>
-                                        <option value="" disabled >Quantity</option>
+                                        <option value="">Quantity</option>
                                         <option value="1">Option 1</option>
                                         <option value="2">Option 2</option>
                                         <option value="3">Option 3</option>
@@ -92,8 +122,12 @@ class ProductsDescription extends Component {
                     </div>
                     <span className="product__review">add a review</span>
                     <div className="product__row-btn">
-                        <button className="btn btn-small product__btn" onClick={ () => this.props.addBasket( parseInt(this.props.productId) ) }>add to cart</button>
-                        <a href="#" className="btn btn-small product__btn product__btn--white">buy now</a>
+                        {
+                            this.state.view ? <Link to="/cart" className="btn btn-small product__btn">view cart</Link> 
+                                            :  <button className="btn btn-small product__btn" onClick={ this.addProduct }>add to cart</button>
+                        }
+                       
+                        <button className="btn btn-small product__btn product__btn--white">buy now</button>
                     </div>
                     <div className="product__social">
                         <span className="product__social-label">Share Now</span>
@@ -122,6 +156,3 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps) (ProductsDescription)
-
-
-//export default ProductsDescription

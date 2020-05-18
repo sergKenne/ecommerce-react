@@ -1,24 +1,56 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom'
-import { connect } from 'react-redux'
-import {addProductToBasket} from '../../action/addProductToBasket'
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import {addProductToBasket} from '../../action/addProductToBasket';
+import {addProductToFavorite} from '../../action/addProductToFavorite';
+import Swal from 'sweetalert2';
 
 const CartItem = (props) => {
     
     const [btn, setBtn] = useState(true);
+    const [like, setLike] = useState(true);
+
     const addToCard = ( event) => {
         event.stopPropagation();
         setBtn(false);
 
         props.productsBasket.length ? 
-            ( props.productsBasket.find(elt => elt.id === props.cartElt.id ) ? console.log("incard") : props.addBasket(props.cartElt)  )
+            ( props.productsBasket.find(elt => elt.id === props.cartElt.id ) ? console.log("incard") : props.addBasket(props.cartElt))
         : 
-            props.addBasket(props.cartElt)    
+            props.addBasket(props.cartElt) ;
+
+        Swal.fire({
+            position: 'center',
+            icon: 'success',
+            text: 'Your product Is Successfully added!',
+            showConfirmButton: true,
+            confirmButtonColor: '#ff5722',
+        })
+    }
+
+    const addToFavorite = () => {
+        setLike(false);
+
+        props.favoriteProducts.length ? 
+            ( props.favoriteProducts.find(elt => elt.id === props.cartElt.id ) ? console.log("incard") : props.addFavorite(props.cartElt))
+        : 
+            props.addFavorite(props.cartElt) ;
+
+        console.log(props.favoriteProducts)
+
+        Swal.fire({
+            position: 'center',
+            icon: 'success',
+            text: 'Your product Is Successfully added!',
+            showConfirmButton: true,
+            confirmButtonColor: '#ff5722',
+        })
+        
     }
 
 
     const showBtn = btn ? (
-                <button onClick={ addToCard } className="btn-floating halfway-fab waves-effect waves-light btn-large red btnWrap">
+                <button onClick={ addToCard } className="btn-floating halfway-fab waves-effect  btn-large red btnWrap">
                     <span  className="card__wrap-icon"><i className="material-icons">shopping_cart</i></span>
                 </button>
             ) : (
@@ -36,7 +68,11 @@ const CartItem = (props) => {
                         <img src={`../../${props.cartElt.img}`}  alt={props.cartElt.title}/>
                     </Link>
                     { showBtn }
-                    <span className="material-icons card-favorite" >favorite </span>
+                    {
+                        like ? <span className="material-icons card-favorite" onClick={addToFavorite}>favorite </span>
+                             : <span className="material-icons card-favorite card-favorite--like">favorite </span>
+                    }
+                   
                 </div>
                 <div className="card-content">
                     <span className="card-title" >{ props.cartElt.title }</span>
@@ -58,13 +94,15 @@ const CartItem = (props) => {
 
 const mapStateToProps = (state) => {
     return {
-        productsBasket: state.productsBasket
+        productsBasket: state.productsBasket,
+        favoriteProducts: state.favoriteProducts
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        addBasket: (item) => dispatch(addProductToBasket(item))
+        addBasket: (item) => dispatch(addProductToBasket(item)),
+        addFavorite: (item) => dispatch(addProductToFavorite(item)),
     }
 }
 

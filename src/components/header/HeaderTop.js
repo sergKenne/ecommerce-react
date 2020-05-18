@@ -19,10 +19,9 @@ const HeaderTop = (props) => {
                     <div className="header__top-item  header__top-item--currency">
                         <div className="input-field">
                             <select>
-                                <option value=""> USA</option>
-                                <option value="1">Option 1</option>
-                                <option value="2">Option 2</option>
-                                <option value="3">Option 3</option>
+                                <option value="">USA</option>
+                                <option value="1">EU</option>
+                                <option value="2">RUB</option>
                             </select>
                         </div>
                     </div>
@@ -34,7 +33,9 @@ const HeaderTop = (props) => {
                             <i className="top-icon__icon fas fa-shopping-cart"></i>
                             <span className='top-icon__badge'>{props.productsBasket.length}</span>
                         </div>
-                        <div className="top-icon__item" id="like-js"><i className="top-icon__icon fas fa-heart"></i><span className='top-icon__badge'>2</span></div>
+                        <div className="top-icon__item" id="like-js">
+                            <i className="top-icon__icon fas fa-heart"></i><span className='top-icon__badge'>{props.favoriteProducts.length}</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -44,7 +45,8 @@ const HeaderTop = (props) => {
 
 const mapStateToProps = (state) => {
     return {
-        productsBasket: state.productsBasket
+        productsBasket: state.productsBasket,
+        favoriteProducts: state.favoriteProducts
     }
 }
 

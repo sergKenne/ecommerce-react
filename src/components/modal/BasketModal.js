@@ -34,7 +34,7 @@ function BasketModal(props) {
                     {
                        props.productsBasket.map(card => {
                            return (
-                            <div className="shop-card shop-card--basket-modal card" key={card.id}>
+                            <div className="shop-card shop-card--basket-modal card" key={Math.random()}>
                                 <div className="shop-card__picture shop-card__picture--modal">
                                     <img src={`../../${card.img}`} alt={card.title} className="shop-card__image shop-card__image--basket-modal" />
                                 </div>
@@ -42,17 +42,25 @@ function BasketModal(props) {
                                     <h5 className="shop-card__title shop-card__title--basket-modal">{card.title}</h5>
                                     <div className="shop-card__price">$<span className="shop-card__price-counter">{card.price}</span></div>
                                 </div>
-                                <div className="basket-modal__inner-icons" id="warning" onClick={() => remove(card.id)}>
-                                    <span className="material-icons basket-modal__icon"  >remove_shopping_cart</span>
+                                <div className="basket-modal__inner-icons" id="warning">
+                                    <span className="material-icons basket-modal__icon" onClick={() => remove(card.id)} >remove_shopping_cart</span>
                                     <Link to="/cart" className="material-icons basket-modal__icon">create</Link>  
                                 </div>
                             </div>
                            )
                        })
                     }
-                    </div>
+                    </div> 
                     <div className="basket-modal__wrap-btn">
-                        <button className="btn btn-small basket-modal__btn">checkout</button>
+                    {
+                        props.productsBasket.length ? (
+                            <button className="btn btn-small basket-modal__btn">checkout</button>
+                        ) : (
+                            <div className="basket-modal__alert">
+                                <span>no product found</span>
+                            </div>
+                        )
+                    }   
                     </div>
                 </div>
             </div>
