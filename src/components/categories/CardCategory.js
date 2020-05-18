@@ -44,7 +44,7 @@ const CardCategory = ({card, productsBasket, addBasket}) => {
                 <span className="material-icons card-favorite">favorite </span>
             </div>
             <div className="card-content">
-            <span className="card-title card-title--category">{card.title}</span>
+            <Link to={`/products/women/17`} className="card-title card-title--category">{card.title}</Link>
                 <div className="card-footer">
                     <span className="card-price">$<span>{card.price}</span></span> 
                     <span className="card-rating">

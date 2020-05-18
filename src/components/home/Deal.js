@@ -57,15 +57,15 @@ function Deal() {
                         lacinia sapien. Mauris et leo sem. Curabitur sit amet enim nisi. Nunc placerat commodo sem,sed maximus purus
                     </p>
                     <p className="deal__time">
-                        <span className="deal__counter hour">{hour}</span>House
-                        <span className="deal__counter minute">{minute}</span>Minutes
-                        <span className="deal__counter second">{second}</span>Seconds
+                        <span className="deal__counter">{hour}</span>House
+                        <span className="deal__counter">{minute}</span>Minutes
+                        <span className="deal__counter">{second}</span>Seconds
                     </p>
                     <Link to="/shop" className="btn btn-small deal__btn">shop now</Link>
                     <div className="deal__tabs">
-                        <div className="deal__item"><img src="image/m1.jpg" alt="" className="deal__tabs-image" /></div>
-                        <div className="deal__item"><img src="image/m2.jpg" alt="" className="deal__tabs-image" /></div>
-                        <div className="deal__item"><img src="image/m3.jpg" alt="" className="deal__tabs-image" /></div>
+                        <div className="deal__item"><img src="image/m1.jpg" alt="deal" className="deal__tabs-image" /></div>
+                        <div className="deal__item"><img src="image/m2.jpg" alt="deal" className="deal__tabs-image" /></div>
+                        <div className="deal__item"><img src="image/m3.jpg" alt="deal" className="deal__tabs-image" /></div>
                     </div>
                 </div>
             </div>

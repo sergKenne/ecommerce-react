@@ -59,7 +59,7 @@ const CategoriesProducts = ({dataSort, sortLowest, sortHighest }) => {
                     <option value="lowest">Lowest Price</option>
                     <option value="highest">Highest Price</option>
                 </select>
-                <div className="categories__result-item"><span>2 388</span> results found</div>
+                <div className="categories__result-item"><span>{dataSort.length}</span> results found</div>
             </div>
             <div className="categories__items">
                 <div className="similar-product__item">

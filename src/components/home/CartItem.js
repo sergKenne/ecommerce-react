@@ -75,7 +75,7 @@ const CartItem = (props) => {
                    
                 </div>
                 <div className="card-content">
-                    <span className="card-title" >{ props.cartElt.title }</span>
+                    <Link to={`/products/${props.cartElt.type}/${props.cartElt.id}`} className="card-title" >{ props.cartElt.title }</Link>
                     <div className="card-footer">
                         <span className="card-price">$<span>{ props.cartElt.price }</span></span> 
                         <span className="card-rating">

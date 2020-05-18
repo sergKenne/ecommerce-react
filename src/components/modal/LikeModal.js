@@ -38,22 +38,24 @@ function LikeModal({productsBasket, favoriteProducts, removeFavorite, addAllFavo
     <div className="basket-modal like-modal-js">
       <div className="contain-wrap basket-modal__wrapper">
         <div className="basket-modal__inner">
-          {favoriteProducts.map((prod) => {
-            return (
-              <div className="shop-card shop-card--basket-modal card" key={Math.random()} >
-                <div className="shop-card__picture">
-                  <img src={`../../${prod.img}`} alt={prod.title} className="shop-card__image shop-card__image--basket-modal" />
+          <div className="basket-modal__inner-card">
+            {favoriteProducts.map((prod) => {
+              return (
+                <div className="shop-card shop-card--basket-modal card" key={Math.random()} >
+                  <div className="shop-card__picture">
+                    <img src={`../../${prod.img}`} alt={prod.title} className="shop-card__image shop-card__image--basket-modal" />
+                  </div>
+                  <div className="shop-card__description shop-card__description--basket-modal">
+                    <h5 className="shop-card__title shop-card__title--basket-modal"> {prod.title} </h5>
+                    <div className="shop-card__price">$<span className="shop-card__price-counter"> {prod.price}</span></div>
+                  </div>
+                  <div className="basket-modal__inner-icons">
+                    <span className="material-icons basket-modal__icon"onClick={() => deleteFavorite(prod.id)}> remove</span>
+                  </div>
                 </div>
-                <div className="shop-card__description shop-card__description--basket-modal">
-                  <h5 className="shop-card__title shop-card__title--basket-modal"> {prod.title} </h5>
-                  <div className="shop-card__price">$<span className="shop-card__price-counter"> {prod.price}</span></div>
-                </div>
-                <div className="basket-modal__inner-icons">
-                  <span className="material-icons basket-modal__icon"onClick={() => deleteFavorite(prod.id)}> remove</span>
-                </div>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
           <div className="basket-modal__wrap-btn">
             {
                 favoriteProducts.length ? (
