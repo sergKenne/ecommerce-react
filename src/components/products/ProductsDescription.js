@@ -5,6 +5,7 @@ import db from '../../assets/js/data/db';
 import ProductPictures from './ProductPictures';
 import {addProductToBasket} from '../../action/addProductToBasket';
 import Swal from 'sweetalert2';
+import M from "materialize-css/dist/js/materialize.min.js";
 
 class ProductsDescription extends Component {
 
@@ -58,6 +59,9 @@ class ProductsDescription extends Component {
         this.setState({
             dataDescription: db.products.find( item => item.id === parseInt(this.props.productId) )
         });
+
+        var elems = document.querySelectorAll("select");
+        M.FormSelect.init(elems, {});
     }
 
     render() {

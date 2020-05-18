@@ -641,11 +641,13 @@ body {
     letter-spacing: -0.09px;
     line-height: 68px;
     text-transform: capitalize;
+    margin-bottom: 1.5rem;
 
     @media screen and (max-width: 769px) {
       font-size: 3.15rem;
       line-height: 1;
       margin-top: 1rem;
+     
     }
 
     @media screen and (max-width: 600px) {
@@ -1393,14 +1395,17 @@ input[type="tel"]:not(.browser-default):focus:not([readonly]) {
     height: 34px;
 }
 
+.product__form .select-wrapper .caret {
+    right: -9px;
+    top: 4px;
+   
+}
+
 .categories__top .select-wrapper .caret {
     position: absolute;
     right: opx;
     top: 2px;
     bottom: 0;
-    // margin: auto 0;
-    // z-index: 0;
-    // fill: rgba(0,0,0,0.87);
 }
 
 span.badge {

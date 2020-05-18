@@ -57,7 +57,7 @@ function Deal() {
                         lacinia sapien. Mauris et leo sem. Curabitur sit amet enim nisi. Nunc placerat commodo sem,sed maximus purus
                     </p>
                     <p className="deal__time">
-                        <span className="deal__counter">{hour}</span>House
+                        <span className="deal__counter">{hour}</span>Hours
                         <span className="deal__counter">{minute}</span>Minutes
                         <span className="deal__counter">{second}</span>Seconds
                     </p>

@@ -83,7 +83,6 @@ export function configSlider() {
     //autoplaySpeed: 2000,
     autoplaySpeed: 3000,
     arrows: false,
-    // rtl: true,
     zIndex: 2000,
 
     responsive: [
@@ -109,6 +108,7 @@ export function configSlider() {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
+          dots: false
         },
       },
     ],
@@ -130,7 +130,6 @@ export function configSlider() {
           slidesToShow: 3,
           slidesToScroll: 3,
           infinite: true,
-          //dots: true
         },
       },
       {
