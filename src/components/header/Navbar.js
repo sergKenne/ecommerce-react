@@ -23,8 +23,8 @@ const Navbar = () => {
                             <ul className="nav__sub-list">
                                 <li className="nav__sub-item"><Link to="products/women/19" className="nav__sub-link">product detail</Link></li>
                                 <li className="nav__sub-item"><Link to="/cart" className="nav__sub-link">cart</Link></li>
-                                <li className="nav__sub-item"><a href="#" className="nav__sub-link">checkout</a></li>
-                                <li className="nav__sub-item"><a href="#" className="nav__sub-link">payment</a></li>
+                                <li className="nav__sub-item"><span className="nav__sub-link">checkout</span></li>
+                                <li className="nav__sub-item"><span className="nav__sub-link">payment</span></li>
                             </ul>
                         </li>        
                         <li className="nav__list-item">
@@ -76,35 +76,35 @@ const Navbar = () => {
                             </ul>
                         </li>  
                         <li className="nav__list-item">
-                            <a href="#" className="nav__list-link">
+                            <span className="nav__list-link">
                                 <span className="material-icons nav__icon">pages</span>page<span className="material-icons nav__icon nav__icon--right">chevron_right</span>
-                            </a>
+                            </span>
                             <ul className="nav__sub-list">
-                                <li className="nav__sub-item"><a href="#" className="nav__sub-link">about us</a></li>
-                                <li className="nav__sub-item"><a href="#" className="nav__sub-link">terms and conditions</a></li>
-                                <li className="nav__sub-item"><a href="#" className="nav__sub-link">privacy policy</a></li>
-                                <li className="nav__sub-item"><a href="#" className="nav__sub-link">faq</a></li>
-                                <li className="nav__sub-item"><a href="#" className="nav__sub-link">404 page</a></li>
-                                <li className="nav__sub-item"><a href="#" className="nav__sub-link">blog deatail</a></li>
-                                <li className="nav__sub-item"><a href="#" className="nav__sub-link">user profile</a></li>
+                                <li className="nav__sub-item"><span className="nav__sub-link">about us</span></li>
+                                <li className="nav__sub-item"><span className="nav__sub-link">terms and conditions</span></li>
+                                <li className="nav__sub-item"><span className="nav__sub-link">privacy policy</span></li>
+                                <li className="nav__sub-item"><span className="nav__sub-link">faq</span></li>
+                                <li className="nav__sub-item"><span className="nav__sub-link">404 page</span></li>
+                                <li className="nav__sub-item"><span className="nav__sub-link">blog deatail</span></li>
+                                <li className="nav__sub-item"><span className="nav__sub-link">user profile</span></li>
                                 <li className="nav__sub-item nav__sub-item--session">
-                                    <a href="#" className="nav__sub-link nav__sub-link--session">session
+                                    <span className="nav__sub-link nav__sub-link--session">session
                                         <span className="material-icons nav__icon nav__icon--right">chevron_right</span>
                                         <span className="material-icons nav__session-icon">chevron_right</span>
-                                    </a>
+                                    </span>
                                     <ul className="nav__session-list">
-                                        <li className="nav__sub-item"><a href="#" className="nav__sub-link">sign in</a></li>
-                                        <li className="nav__sub-item"><a href="#" className="nav__sub-link">register</a></li>
-                                        <li className="nav__sub-item"><a href="#" className="nav__sub-link">forgot password</a></li>
-                                        <li className="nav__sub-item"><a href="#" className="nav__sub-link">thank you</a></li>
+                                        <li className="nav__sub-item"><span className="nav__sub-link">sign in</span></li>
+                                        <li className="nav__sub-item"><span className="nav__sub-link">register</span></li>
+                                        <li className="nav__sub-item"><span className="nav__sub-link">forgot password</span></li>
+                                        <li className="nav__sub-item"><span className="nav__sub-link">thank you</span></li>
                                     </ul>
                                 </li>
                             </ul>
                         </li>
                         <li className="nav__list-item"> 
-                            <a href="#" className="nav__list-link">
+                            <span className="nav__list-link">
                                 <span className="material-icons nav__icon">perm_contact_calendar</span>contact us
-                            </a>
+                            </span>
                         </li>
                     </ul> 
                 </div>

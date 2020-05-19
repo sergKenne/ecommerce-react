@@ -1,7 +1,6 @@
-import React, {useEffect} from 'react'
+import React from 'react'
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom'
-import $ from 'jquery'
 import {removeProductFromBasket} from '../../action/removeProductInBasket'
 import Swal from 'sweetalert2'
 

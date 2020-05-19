@@ -1,4 +1,4 @@
-import {ADD_FAVORITE, REMOVE_FAVORITE, CLEAN_FAVORITE, ADD_ALL} from '../actiontypes/index'
+import {ADD_FAVORITE, REMOVE_FAVORITE, CLEAN_FAVORITE} from '../actiontypes/index'
 
 const initialState = JSON.parse(localStorage.getItem("favoriteProducts")) ? JSON.parse(localStorage.getItem("favoriteProducts")) : [];
 

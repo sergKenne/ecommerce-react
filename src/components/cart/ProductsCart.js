@@ -44,7 +44,7 @@ const ProductsCart = ({productsBasket}) => {
             </div>
           ) : (
             <div className="shop__empty">
-              <img className="shop__empty-img" src="../../image/empty_corbage.png"/>
+              <img className="shop__empty-img" src="../../image/empty_corbage.png" alt="corbage" />
                <h4 className="shop__empty-title">Your Shopping Bag Is Empty.</h4>
                <Link className="shop__shopping" to="/shop">Go For Shopping</Link>
             </div>

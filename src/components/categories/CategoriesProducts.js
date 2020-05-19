@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {connect} from 'react-redux'
 import CardCategory from './CardCategory'
-import db from '../../assets/js/data/db'
 import {lowest} from '../../action/lowest';
 import {highest} from '../../action/highest'
 import $ from 'jquery'
