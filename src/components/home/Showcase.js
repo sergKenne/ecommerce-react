@@ -14,10 +14,10 @@ function Showcase() {
                 </div>
                 <div className="showcase__news">
                     <div className="showcase__news-item showcase__news-item--top">
-                        <img className="showcase__news-img" src="image/aside-1.jpg" alt="sale" />
+                        <Link to="/shop"><img className="showcase__news-img" src="image/aside-1.jpg" alt="sale" /></Link>
                     </div>
                     <div className="showcase__news-item showcase__news-item--bottom">
-                        <img className="showcase__news-img" src="image/aside-2.jpg" alt="sale" />
+                        <Link to="/shop"><img className="showcase__news-img" src="image/aside-2.jpg" alt="sale" /></Link>
                     </div>
                 </div>
             </div>

@@ -5,6 +5,8 @@ import {addProductToBasket} from '../../action/addProductToBasket';
 import {addProductToFavorite} from '../../action/addProductToFavorite';
 import Swal from 'sweetalert2';
 
+
+
 const CartItem = (props) => {
     
     const [btn, setBtn] = useState(true);

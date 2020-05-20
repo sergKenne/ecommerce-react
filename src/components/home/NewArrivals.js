@@ -2,10 +2,8 @@ import React, { Component } from 'react';
 //import M from 'materialize-css/dist/js/materialize.min.js';
 import TabsSlide from './TabsSlide';
 
-
-
 class NewArrivals extends Component {
-
+    
     // componentDidMount() {
     //     var elem = document.querySelector('.tabs-2');
     //     var options = {duration:50}
