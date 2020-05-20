@@ -38,7 +38,9 @@ function BasketModal(props) {
                                     <img src={`../../${card.img}`} alt={card.title} className="shop-card__image shop-card__image--basket-modal" />
                                 </div>
                                 <div className="shop-card__description shop-card__description--basket-modal">
-                                    <h5 className="shop-card__title shop-card__title--basket-modal">{card.title}</h5>
+                                    <h5 className="shop-card__title shop-card__title--basket-modal">
+                                        {card.title.length <= 14 ? card.title : `${card.title.substring(0, 13)}...`}
+                                    </h5>
                                     <div className="shop-card__price">$<span className="shop-card__price-counter">{card.price}</span></div>
                                 </div>
                                 <div className="basket-modal__inner-icons" id="warning">

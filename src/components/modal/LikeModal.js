@@ -46,7 +46,9 @@ function LikeModal({productsBasket, favoriteProducts, removeFavorite, addAllFavo
                     <img src={`../../${prod.img}`} alt={prod.title} className="shop-card__image shop-card__image--basket-modal" />
                   </div>
                   <div className="shop-card__description shop-card__description--basket-modal">
-                    <h5 className="shop-card__title shop-card__title--basket-modal"> {prod.title} </h5>
+                    <h5 className="shop-card__title shop-card__title--basket-modal">
+                        {prod.title.length <= 20 ? prod.title : `${prod.title.substring(0, 20)}...`} 
+                    </h5>
                     <div className="shop-card__price">$<span className="shop-card__price-counter"> {prod.price}</span></div>
                   </div>
                   <div className="basket-modal__inner-icons">
