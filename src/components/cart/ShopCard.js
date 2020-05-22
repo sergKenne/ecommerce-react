@@ -60,7 +60,7 @@ function ShopCard({card, productsBasket, removeProduct, updateQuantity , totalPr
             </div>
             <div className="shop-card__description">
             <h5 className="shop-card__title">
-                {card.title.length <= 18 ? card.title : `${card.title.substring(0, 18)}...`}
+                {card.title.length <= 18 ? card.title : `${card.title.substring(0, 15)}...`}
             </h5>
             <p className="shop-card__text">Delivery in 3-4 days | Free</p>
             </div>
