@@ -50,7 +50,7 @@ function Deal() {
             <div className="contain-wrap deal__row">
                 <div className="deal__column">
                     <Link to={`/products/${deal.type}/${deal.id}`}>
-                         <img src={`../../${deal.tabs[2]}`}  alt={deal.title}  className="deal__image"/>
+                         <img src={`../../${deal.tabs[0]}`}  alt={deal.title}  className="deal__image"/>
                     </Link>
                 </div>
                 <div className="deal__column">

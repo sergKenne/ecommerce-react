@@ -88,9 +88,9 @@ const db = {
       isFreeShipping: true,
       type: "gadgets",
       tabs: [
-        "image/m1.jpg",
-        "image/m2.jpg",
         "image/m3.jpg",
+        "image/m2.jpg",
+        "image/m1.jpg",
         "image/m4.jpg",
         "image/m5.jpg",
       ],
