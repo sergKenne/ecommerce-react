@@ -2,11 +2,11 @@ import React from "react";
 import { connect } from "react-redux";
 import { addProductToFavorite } from "../../action/addProductToFavorite";
 import { removeProductfromFavorite } from "../../action/removeProductfromFavorite";
+import {addProductToBasket} from '../../action/addProductToBasket';
 import Swal from 'sweetalert2';
-import { addAll } from "../../action/addAll";
 import { cleanFavorite } from "../../action/cleanFavorite";
 
-function LikeModal({productsBasket, favoriteProducts, removeFavorite, addAllFavoriteToBasket, CleanAllFavorite }) {
+function LikeModal({productsBasket, favoriteProducts, removeFavorite, CleanAllFavorite, addBasket }) {
 
   const deleteFavorite = (id) => {
     Swal.fire({
@@ -24,14 +24,15 @@ function LikeModal({productsBasket, favoriteProducts, removeFavorite, addAllFavo
   };
 
   const addAllToBasket = () => {
-     const allBasket = [...productsBasket, ...favoriteProducts];
-    //   const arr = allBasket.map(item => item.id);
-    //   console.log("arr:",arr)
-    //   var d = arr.filter((item, pos) => arr.indexOf(item) === pos)
-    //   console.log("after filter:", d);
-    //   console.log("allBasket:", allBasket);
-      addAllFavoriteToBasket(allBasket);
-      CleanAllFavorite();
+   
+      if(favoriteProducts.length > 0) {
+         for(var i=0; i<favoriteProducts.length; i++) {
+            if( productsBasket.find(elt => elt.id === favoriteProducts[i].id ) === undefined ) {
+              addBasket(favoriteProducts[i]) ;
+            }
+         }
+         CleanAllFavorite();
+      }
   }
 
   return (
@@ -84,10 +85,10 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    //addBasket: (item) => dispatch(addProductToBasket(item)),
+    addBasket: (item) => dispatch(addProductToBasket(item)),
     addFavorite: (item) => dispatch(addProductToFavorite(item)),
     removeFavorite: (id) => dispatch(removeProductfromFavorite(id)),
-    addAllFavoriteToBasket: (prod) => dispatch(addAll(prod)),
+    //addAllFavoriteToBasket: (prod) => dispatch(addAll(prod)),
     CleanAllFavorite: () => dispatch(cleanFavorite())
   };
 };

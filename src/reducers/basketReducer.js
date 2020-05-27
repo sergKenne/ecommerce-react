@@ -17,7 +17,7 @@ const basketReducer = (state=initialState, action) => {
             const prods = action.products
             return prods;
         default:
-             return state
+            return state
     }
 }
 
