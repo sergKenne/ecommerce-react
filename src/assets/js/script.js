@@ -8,12 +8,17 @@ export function script() {
       if ($(window).scrollTop() > 220) {
         $("#mainnav").addClass("navbar-fixed-top");
         $(".nav__list").addClass("nav-position-js");
-        $(".nav__logo").addClass("show");
+        $(".header__top-item").addClass("scroll-basket-js");
+        $(".header__top-item--currency, .top-logo").addClass("hide-js");
+       
+        $(".nav__logo").addClass("show");  
         $(".nav__wrap").addClass("btn-menu-right");
         $(".nav__btn-menu").addClass("wrap-btn-menu-js");
       } else {
         $("#mainnav").removeClass("navbar-fixed-top");
         $(".nav__list").removeClass("nav-position-js");
+        $(".header__top-item").removeClass("scroll-basket-js");
+        $(".header__top-item--currency, .top-logo").removeClass("hide-js");
         $(".nav__logo").removeClass("show");
         $(".nav__wrap").removeClass("btn-menu-right");
         $(".nav__btn-menu").removeClass("wrap-btn-menu-js");

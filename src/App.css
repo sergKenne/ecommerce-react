@@ -183,6 +183,37 @@ body {
   border-radius: 50%;
 }
 
+.scroll-basket-js {
+  position: fixed;
+  right: calc((100vw - 1480px)/2);
+  top: 20px;
+  z-index: 100;
+}
+
+@media screen and (max-width: 1440px) {
+  .scroll-basket-js {
+    right: calc((100vw - 1140px)/2);
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .scroll-basket-js {
+    right: 220px;
+  }
+}
+
+@media screen and (max-width: 621px) {
+  .scroll-basket-js {
+    right: 120px;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .scroll-basket-js {
+    right: 90px;
+  }
+}
+
 .nav__wrap {
   background-color: #283593;
   height: 4rem;
@@ -218,6 +249,18 @@ body {
   position: absolute;
   top: 16px;
   display: none;
+}
+
+@media screen and (max-width: 425px) {
+  .nav__logo {
+    width: 150px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .nav__logo {
+    width: 120px;
+  }
 }
 
 @media screen and (max-width: 1200px) {
@@ -1231,6 +1274,7 @@ body {
   font-size: 1.25rem;
   line-height: 1.75rem;
   font-weight: 400;
+  margin-bottom: 1.2rem;
 }
 
 .deal__prices {
@@ -2511,6 +2555,7 @@ span.badge {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+  padding-right: 100px;
 }
 
 @media screen and (max-width: 1200px) {
@@ -2523,6 +2568,10 @@ span.badge {
 
 .show {
   display: block;
+}
+
+.hide-js {
+  display: none;
 }
 
 @media screen and (max-width: 1200px) {

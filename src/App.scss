@@ -167,11 +167,28 @@ body {
 }
 
 .scroll-basket-js {
-  // position: fixed;
+  position: fixed;
   
-  // left: 400px;
-  // top: 20px;
-  // z-index: 100;
+  right: calc((100vw - 1480px)/2);
+
+  @media screen and (max-width: 1440px) {
+    right: calc((100vw - 1140px)/2);
+  }
+
+  @media screen and (max-width: 1200px) {
+    right: 220px;
+  }
+
+  @media screen and (max-width: 621px) {
+    right: 120px;
+  }
+
+  @media screen and (max-width: 460px) {
+    right: 90px;
+  }
+
+  top: 20px;
+  z-index: 100;
 }
 
 .nav {
@@ -209,6 +226,13 @@ body {
     position: absolute;
     top: 16px;
     display: none;
+    @media screen and (max-width: 425px) {
+      width: 150px;
+    }
+  
+    @media screen and (max-width: 375px) {
+      width: 120px; 
+    }
   }
 
   &__list-wrap {
@@ -2113,6 +2137,9 @@ span.badge {
 .nav-position-js {
   justify-content: flex-end;
 
+  // test
+  padding-right: 100px;
+
   @media screen and (max-width: 1200px) {
     justify-content: flex-start;
   }
@@ -2120,6 +2147,10 @@ span.badge {
 
 .show {
   display: block;
+}
+
+.hide-js {
+  display: none;
 }
 
 .btn-menu-right {

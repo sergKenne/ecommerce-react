@@ -25,10 +25,10 @@ const HeaderTop = (props) => {
                             </select>
                         </div>
                     </div>
-                    <div className="header__top-item">
+                    <div className="header__top-item top-logo">
                         <Link to="/"><img src="../../image/logo.png" alt="logo" className="header__top-logo" /></Link>
                     </div>
-                    <div className="top-icon header__top-item scroll-basket-js">
+                    <div className="top-icon header__top-item ">
                         <div className="top-icon__item" id="basket-js">
                             <i className="top-icon__icon fas fa-shopping-cart"></i>
                             <span className='top-icon__badge'>{props.productsBasket.length}</span>
