@@ -813,7 +813,7 @@ body {
 .tabs.tabs-fixed-width .tab {
   flex: 0;
   margin: 0 8px;
-  z-index: 100;
+  z-index: 3;
 
   @media screen and (max-width: 376px) {
     margin-bottom: 1rem;
@@ -2138,10 +2138,15 @@ span.badge {
 }
 
 .nav-position-js {
-  justify-content: flex-end;
 
-  // test
-  padding-right: 100px;
+  @media screen and (min-width: 1201px) {
+    justify-content: flex-end;
+
+      // test
+      padding-right: 100px;
+
+  }
+  
 
   @media screen and (max-width: 1200px) {
     justify-content: flex-start;
