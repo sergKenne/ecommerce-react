@@ -549,6 +549,8 @@ body {
     }
   }
 
+ 
+
   &__big-sale {
     display: flex;
     justify-content: flex-end;
@@ -811,6 +813,7 @@ body {
 .tabs.tabs-fixed-width .tab {
   flex: 0;
   margin: 0 8px;
+  z-index: 100;
 
   @media screen and (max-width: 376px) {
     margin-bottom: 1rem;
